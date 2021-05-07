@@ -1,9 +1,9 @@
 /*
  
- 	Author:
+ 	Author: 
  	Version:
  
  */
 public class Course {
-
+	
 }
