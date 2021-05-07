@@ -2,18 +2,7 @@
 
 Responsible Student Simulator
 Authors: Jeremie Park, Megan Choy
-Revision: 4/23/21
-
-
-Introduction: 
-[In a few paragraphs totaling about ½ page, introduce the high-level concept of your program. What this looks like depends a lot on what type of thing you are making. An introduction for an application will look different than one for a game. In general, your introduction should address questions like these:
-What does your program do?
-What problem does it solve? Why did you write it?
-What is the story?
-What are the rules? What is the goal?
-Who would want to use your program?
-What are the primary features of your program?]
-
+Revision: 5/7/21
 
 Introduction: 
 Responsible Student Simulator (RSS) is an idle simulator game for people who enjoy seeing numbers grow. Users control a student in high school and try to survive through various events, including passing hard courses, attending school events, and managing stress and sleep. The currency used in this game are brain cells that are gained by the second and the rate can be increased by upgrading the student’s supplies and attending harder courses. However, there are ways that brain cell production can decrease, such as negative emotions and not getting enough sleep. The ultimate goal is to finish 4 years of highschool!
@@ -26,15 +15,8 @@ The menu shows the student in the top left corner with the stress and sleep bars
 
 
 Instructions:
-[Explain how to use the program. This needs to be specific: 
-Which keyboard keys will do what? 
-Where will you need to click? 
-Will you have menus that need to be navigated? What will they look like? 
-Do actions need to be taken in a certain order?]
-
-
-        When the game is first opened, users will be prompted to input a student name. That name will be used for the current save file and carried on throughout the game. After, the user will see the main panel with the brain cell count, the student’s stats, and various upgrades. The user can click on the upgrade buttons to increase the production of brain cells and also click between “upgrades”, “courses”, and “prestige”.
-        The student’s sleep and stress levels will change while the game is running. To increase sleep, the user will click on the bed and have to wait 20 seconds while the student is sleeping. During that time, no upgrades can be bought and no courses can be taken. There will be extra activities that will cost brain cells but will decrease stress.
+   When the game is first opened, users will be prompted to input a student name. That name will be used for the current save file and carried on throughout the game. After, the user will see the main panel with the brain cell count, the student’s stats, and various upgrades. The user can click on the upgrade buttons to increase the production of brain cells and also click between “upgrades”, “courses”, and “prestige”.
+The student’s sleep and stress levels will change while the game is running. To increase sleep, the user will click on the bed and have to wait 20 seconds while the student is sleeping. During that time, no upgrades can be bought and no courses can be taken. There will be extra activities that will cost brain cells but will decrease stress.
 
         
 
@@ -51,7 +33,6 @@ Must-have Features:
 
 
 Want-to-have Features:
-[These are features that you would like to have by the project due date, but you’re unsure whether you’ll hit all of them. A good final project would have perhaps half of these completed. At least 5 are required. Again, fully describe each.]
 *   Happiness bar - goes down when student is studying/attending courses, but goes up from other activities other than just school
 *  Prestige currency: can pick which buffs to buy after prestige. Amount could possibly depend on the ending amount of brain cells
 *  Pop up events: Various events that the user can choose an option to react to the event. Depending what they pick, it could negatively or positively affect the student. (Like bitcoin billionaire or sims) Could also possibly be actual questions, like a trivia question on science or a math problem
@@ -60,7 +41,6 @@ Want-to-have Features:
 
 
 Stretch Features:
-[These are features that we agree a fully complete version of this program would have, but that you probably will not have time to implement. A good final project does not necessarily need to have any of these completed at all. At least 3 are required. Again, fully describe each.]
 * Automation: Upgrades and perks that allow the player to automate certain tasks like coursesor buying upgrades.
 *  Customizing your own student: when you first start the game, you can pick features for the student, various hats/collectibles can be unlocked
 *  Schedule: Time will pass as you play the game; certain features will be restricted, while others may be unlocked. For example, courses will not be usable during weekends, but 
@@ -69,25 +49,18 @@ Stretch Features:
 
 
 Class List:
-[This section lists the Java classes that make up the program and very briefly describes what each represents. It’s totally fine to put this section in list format and not to use full sentences.][m]
-
-
 * BrainCell: handles the math of total brain cells including the rate of the brain cell 
 * Course(name, time, payout, intensity): super class of all the courses that the student can take
 * Upgrade(name, rate, level): abstract class representing an upgrade; this includes both upgrades bought with brain cells and prestige currency
-* UpgradeButton(Upgrade): The button on the menu and when clicked, will change the Upgrade class
-* CourseButton: The button on the menu to start a course; when clicked, the course will start its timer, adding its respective amount of brain cells to the total balance
-* PrestigeButton: The button on the menu to reset current progress and add a multiplier[n]
 * Menu: The actual window with all the components of the GUI
+* StartMenu: Prompts the user give a name and a start button
+* UpgradesPanel:
+* CoursePanel:
 * Sleep: class that holds the percentage of sleep, can be decreased or increased
 * Stress: class that holds the stress value, can be decreased or increased
 
 
 Credits:
-[Gives credit for project components. This includes both internal credit (your group members) and external credit (other people, websites, libraries). To do this:
-* List the group members and describe how each member contributed to the completion of the final program. This could be classes written, art assets created, leadership/organizational skills exercises, or other tasks. Initially, this is how you plan on splitting the work.
-* Give credit to all outside resources used. This includes downloaded images or sounds, external java libraries, parent/tutor/student coding help, etc.]
-
-Jeremie: BrainCell, Upgrade 
-Megan: Menu, Course, CourseButton
-TBD: Prestige, Sleep, Stress
+* Jeremie: BrainCell, Upgrade 
+* Megan: Menu, CoursePanel, UpgradePanel, StartMenu
+* TBD: Prestige, Sleep, Stress
