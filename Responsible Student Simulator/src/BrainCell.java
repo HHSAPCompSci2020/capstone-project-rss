@@ -1,3 +1,9 @@
+/*
+ 
+ 	Author: Jeremie Park
+ 	Version: 01
+ 
+ */
 
 public class BrainCell {
 	
