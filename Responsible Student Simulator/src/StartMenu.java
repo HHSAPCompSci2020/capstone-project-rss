@@ -17,7 +17,7 @@ public class StartMenu extends JPanel implements ActionListener{
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-//		window.goToMenu()
+		window.goToMenu();
 	}
 
 }
