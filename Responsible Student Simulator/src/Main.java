@@ -27,7 +27,6 @@ public class Main extends JFrame {
 	    
 	    startMenu = new StartMenu(this);    
 	    menu = new Menu(this);
-	    upgradePanel = new UpgradePanel();
 	    coursePanel = new CoursePanel();
 	    	
 	    tabbedPane = new JTabbedPane();

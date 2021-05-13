@@ -7,6 +7,12 @@ import javax.swing.JPanel;
 public class UpgradePanel extends JPanel implements ActionListener{
 
 	private ArrayList<Upgrade> upgrades = new ArrayList<Upgrade>();
+	private BrainCell brain;
+	
+	public UpgradePanel(BrainCell brain) {
+		this.brain = brain;
+		upgrades.add(new Upgrade(1, 10));
+	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -23,17 +29,17 @@ public class UpgradePanel extends JPanel implements ActionListener{
 		for (int i = 0; i < upgrades.size(); i++) {
 			rate += upgrades.get(i).getProduction();
 		}
+		brain.setRate(rate);
 		return rate;
 	}
 	
 	/**
 	 * 
 	 * @param index - index indicating which upgade to buy; each upgrade is assigned an index in the arraylist
-	 * @return the amount of braincells spent
 	 */
-	public double buyUpgrade(int index) {
+	public void buyUpgrade(int index) {
 		upgrades.get(index).buy();
-		return upgrades.get(index).getCost();
+		brain.addTotal(-upgrades.get(index).getCost());
 	}
 
 }

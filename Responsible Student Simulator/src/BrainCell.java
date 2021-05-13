@@ -37,4 +37,8 @@ public class BrainCell {
 		prestigeLevel++;
 	}
 	
+	public void setRate(double amount) {
+		brainCellRate = amount;
+	}
+	
 }
