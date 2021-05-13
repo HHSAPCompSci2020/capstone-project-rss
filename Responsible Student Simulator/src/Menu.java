@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 public class Menu extends JPanel implements ActionListener {
 
 	Main window;
+	private BrainCell brain;
 	
 	public Menu (Main window) {
 		super(new BorderLayout());
@@ -23,6 +24,7 @@ public class Menu extends JPanel implements ActionListener {
 		JLabel brainCell = new JLabel("Brain Cells: " + "\n Brain Cell Rates: ", JLabel.CENTER);
 	
 		add(brainCell, BorderLayout.PAGE_START);
+		brain = new BrainCell();
 
 	}
 	

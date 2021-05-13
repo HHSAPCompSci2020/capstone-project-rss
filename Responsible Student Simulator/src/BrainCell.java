@@ -18,7 +18,7 @@ public class BrainCell {
 	}
 	
 	public double getRate() {
-		return brainCellRate;
+		return brainCellRate * (Math.pow(2, prestigeLevel));
 	}
 	
 	public double getTotal() {
@@ -31,6 +31,10 @@ public class BrainCell {
 	
 	public void addRate(double addAmount) {
 		brainCellRate += addAmount;
+	}
+	
+	public void prestige() {
+		prestigeLevel++;
 	}
 	
 }

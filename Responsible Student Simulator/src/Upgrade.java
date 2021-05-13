@@ -24,6 +24,7 @@ public class Upgrade {
 	public void buy() {
 		currentCost = baseCost * Math.pow(1.15, owned);
 		owned++;
+		currentProduction = baseProduction * owned;
 	}
 	
 	public double getProduction() {
