@@ -7,7 +7,11 @@ import javax.swing.JPanel;
 public class UpgradePanel extends JPanel implements ActionListener{
 
 	private ArrayList<Upgrade> upgrades = new ArrayList<Upgrade>();
+	private BrainCell brainCell;
 	
+	public UpgradePanel(BrainCell brainCell) {
+		this.brainCell = brainCell;
+	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
