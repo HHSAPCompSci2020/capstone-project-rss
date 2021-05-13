@@ -13,6 +13,14 @@ public class UpgradePanel extends JPanel implements ActionListener{
 	public UpgradePanel(BrainCell brain) {
 		this.brain = brain;
 		upgrades.add(new Upgrade(1, 10));
+		upgrades.add(new Upgrade(5, 100));
+		upgrades.add(new Upgrade(20, 1000));
+		upgrades.add(new Upgrade(50, 5000));
+		upgrades.add(new Upgrade(100, 10000));
+		upgrades.add(new Upgrade(500, 50000));
+		upgrades.add(new Upgrade(1000, 100000));
+		upgrades.add(new Upgrade(5000, 1000000));
+		
 	}
 
 	@Override
