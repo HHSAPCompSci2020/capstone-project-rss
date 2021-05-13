@@ -7,24 +7,31 @@
 
 public class Upgrade {
 
-	double baseCost;
-	double currentCost;
-	double baseProduction;
-	int owned;
+	private double baseCost;
+	private double currentCost;
+	private double baseProduction;
+	private double currentProduction;
+	private int owned;
 	
 	public Upgrade(double baseProduction, double baseCost) {
 		this.baseCost = baseCost;
 		this.baseProduction = baseProduction;
+		currentProduction = baseProduction;
 		currentCost = baseCost;
 		owned = 0;
 	}
 	
 	public void buy() {
-		return;
+		currentCost = baseCost * Math.pow(1.15, owned);
+		owned++;
 	}
 	
-	public void levelUp() {
-		
+	public double getProduction() {
+		return currentProduction;
+	}
+	
+	public double getCost() {
+		return currentCost;
 	}
 	
 }

@@ -18,7 +18,7 @@ public class Stress {
 	}
 	
 	public void act() {
-		return;
+		currentStress++;
 	}
 	
 	public double getStress() {

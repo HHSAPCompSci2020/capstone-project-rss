@@ -12,8 +12,15 @@ public class Sleep {
 	double maxSleep;
 	double currentSleep;
 	
+	public Sleep() {
+		currentSleep = 100;
+		maxSleep = 100;
+	}
+	
 	public void act() {
-		return;
+		if (currentSleep > 0) {
+			currentSleep--;
+		}
 	}
 	
 	public double getSleep() {

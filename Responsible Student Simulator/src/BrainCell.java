@@ -1,7 +1,7 @@
 /*
  
  	Author: Jeremie Park
- 	Version: 01
+ 	Version: 02
  
  */
 
@@ -18,23 +18,19 @@ public class BrainCell {
 	}
 	
 	public double getRate() {
-		return 0;
+		return brainCellRate;
 	}
 	
 	public double getTotal() {
-		return 0;
+		return totalBrainCells;
 	}
 	
-	public double updateTotal() {
-		return 0;
+	public void addTotal(double addAmount) {
+		totalBrainCells += addAmount;
 	}
 	
-	public void addTotal() {
-		return;
-	}
-	
-	public void addRate() {
-		return;
+	public void addRate(double addAmount) {
+		brainCellRate += addAmount;
 	}
 	
 }
