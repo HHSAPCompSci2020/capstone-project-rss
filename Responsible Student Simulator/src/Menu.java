@@ -15,16 +15,16 @@ import javax.swing.JPanel;
 public class Menu extends JPanel implements ActionListener {
 
 	Main window;
-	private BrainCell brain;
+	private BrainCell brainCell;
 	
-	public Menu (Main window) {
+	public Menu (Main window, BrainCell brainCell) {
 		super(new BorderLayout());
 		this.window = window;
+		this.brainCell = brainCell;
 		
-		JLabel brainCell = new JLabel("Brain Cells: " + "\n Brain Cell Rates: ", JLabel.CENTER);
+		JLabel brainRates = new JLabel("Brain Cells: " + "\n Brain Cell Rates: ", JLabel.CENTER);
 	
-		add(brainCell, BorderLayout.PAGE_START);
-		brain = new BrainCell();
+		add(brainRates, BorderLayout.PAGE_START);
 
 	}
 	

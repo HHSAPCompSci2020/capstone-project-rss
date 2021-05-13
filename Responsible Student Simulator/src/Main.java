@@ -15,6 +15,7 @@ public class Main extends JFrame {
 	private Menu menu;
 	private UpgradePanel upgradePanel;
 	private CoursePanel coursePanel;
+	private BrainCell brainCell;
 	
 	public Main(String title) {
 		super(title);
@@ -25,10 +26,14 @@ public class Main extends JFrame {
 //	    CardLayout cl = new CardLayout();
 //	    cardPanel.setLayout(cl);
 	    
+	    brainCell = new BrainCell();
 	    startMenu = new StartMenu(this);    
-	    menu = new Menu(this);
-	    coursePanel = new CoursePanel();
+	    menu = new Menu(this, brainCell);
+	    upgradePanel = new UpgradePanel(brainCell);
+	    coursePanel = new CoursePanel(brainCell);
 	    	
+	    
+	    
 	    tabbedPane = new JTabbedPane();
 //	    tabbedPane.setTabPlacement(JTabbedPane.LEFT);
 	    tabbedPane.add("Upgrades", upgradePanel);

@@ -7,13 +7,14 @@ import javax.swing.JPanel;
 public class UpgradePanel extends JPanel implements ActionListener{
 
 	private ArrayList<Upgrade> upgrades = new ArrayList<Upgrade>();
+
 	private BrainCell brain;
 	
 	public UpgradePanel(BrainCell brain) {
 		this.brain = brain;
 		upgrades.add(new Upgrade(1, 10));
 	}
-	
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
