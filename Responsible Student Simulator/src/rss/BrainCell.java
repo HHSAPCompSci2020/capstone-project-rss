@@ -1,3 +1,4 @@
+package rss;
 /*
  
  	Author: Jeremie Park
@@ -37,7 +38,7 @@ public class BrainCell {
 		if (stress.getStress() > 90) {
 			multipliers -= 0.3;
 		}
-		return brainCellRate * multipliers;
+		return finalRate * multipliers;
 	}
 	
 	public double getTotal() {

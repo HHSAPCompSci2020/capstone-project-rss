@@ -1,3 +1,4 @@
+package rss;
 import java.awt.CardLayout;
 
 import javax.swing.JFrame;
@@ -6,6 +7,7 @@ import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JButton;
 import javax.swing.Timer;
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -68,10 +70,6 @@ public class Main extends JFrame {
 			    	brainCell.act();
 			    	calculate();
 			    	counter = 0;
-		    	}
-		    	if (otherPanel.prestiged) {
-		    		prestige();
-		    		otherPanel.prestiged = false;
 		    	}
 		    	
 		    	if (coursePanel.getCourses().get(0).inProduction) {

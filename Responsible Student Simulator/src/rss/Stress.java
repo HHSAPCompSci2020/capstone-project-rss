@@ -1,3 +1,4 @@
+package rss;
 /*
  	
  	Represents the stress level of the student.

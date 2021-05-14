@@ -1,3 +1,4 @@
+package rss;
 /*
  
  	Represents the sleep level of the student.
