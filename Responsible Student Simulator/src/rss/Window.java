@@ -52,6 +52,7 @@ public class Window extends JFrame {
 
 	    
 	    splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, menu, tabbedPane);
+	    splitPane.setDividerLocation(355);
 
 //	    cardPanel.add(startMenu,"1");
 //	    cardPanel.add(splitPane,"2");

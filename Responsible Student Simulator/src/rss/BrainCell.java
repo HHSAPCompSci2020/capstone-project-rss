@@ -11,8 +11,8 @@ public class BrainCell {
 	private double brainCellRate;
 	private double totalBrainCells;
 	private double prestigeLevel;
-	protected Sleep sleep;
-	protected Stress stress;
+	private Sleep sleep;
+	private Stress stress;
 	
 	public BrainCell() {
 		brainCellRate = 0;
@@ -63,6 +63,14 @@ public class BrainCell {
 	
 	public void sleep() {
 		sleep.setSleep(100);
+	}
+	
+	public double getSleep() {
+		return sleep.getSleep();
+	}
+	
+	public double getStress() {
+		return stress.getStress();
 	}
 	
 	/**
