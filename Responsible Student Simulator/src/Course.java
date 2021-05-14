@@ -9,6 +9,9 @@ public class Course {
 	private int level;
 	private double baseProduction, baseCost;
 	private double currentProduction, currentCost;
+	protected boolean inProduction;
+	private int productionProgress;
+	private int productionFinish;
 	private String name;
 	
 	public Course(String name, double baseProduction, double baseCost, double time) {
@@ -18,10 +21,20 @@ public class Course {
 		currentProduction = baseProduction;
 		currentCost = baseProduction;
 		this.name = name;
+		inProduction = false;
+		productionFinish = (int)(time * 60);
+		productionProgress = 0;
+		
 	}
 	
 	public void run() {
-		
+		if (inProduction) {
+			productionProgress++;
+		}
+	}
+	
+	public int getLevel() {
+		return level;
 	}
 	
 	public void levelUp() {
@@ -30,11 +43,25 @@ public class Course {
 		currentProduction = baseProduction * level;
 	}
 	
+	public void startProduction() {
+		inProduction = true;
+	}
+	
+	public void endProduction() {
+		productionProgress = 0;
+		inProduction = false;
+	}
+	
 	public double getProduction() {
+		currentProduction = level * baseProduction;
 		return currentProduction;
 	}
 	
 	public double getCost() {
 		return currentCost;
+	}
+	
+	public double getProgress() {
+		return productionProgress / productionFinish;
 	}
 }

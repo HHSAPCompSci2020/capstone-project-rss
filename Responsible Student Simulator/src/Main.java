@@ -46,7 +46,7 @@ public class Main extends JFrame {
 //	    tabbedPane.setTabPlacement(JTabbedPane.LEFT);
 	    tabbedPane.add("Upgrades", upgradePanel);
 	    tabbedPane.add("Courses", coursePanel);
-	    tabbedPane.add("Prestige", otherPanel);
+	    tabbedPane.add("Other", otherPanel);
 
 	    
 	    splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, menu, tabbedPane);
@@ -71,7 +71,18 @@ public class Main extends JFrame {
 		    	}
 		    	if (otherPanel.prestiged) {
 		    		prestige();
+		    		otherPanel.prestiged = false;
 		    	}
+		    	
+		    	if (coursePanel.getCourses().get(0).inProduction) {
+		    		coursePanel.getCourses().get(0).run();
+		    	}
+		    	if (coursePanel.getCourses().get(0).getProgress() == 1) {
+		    		System.out.println("end");
+		    		coursePanel.getCourses().get(0).endProduction();
+		    		brainCell.addTotal(coursePanel.getCourses().get(0).getProduction());
+		    	}
+		    	
 		    	menu.repaint(brainCell.getTotal(), brainCell.getRate(), brainCell.stress.getStress(), brainCell.sleep.getSleep());
 		        repaint();
 		    }

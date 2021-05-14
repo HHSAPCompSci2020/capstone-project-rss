@@ -56,11 +56,7 @@ public class UpgradePanel extends JPanel implements ActionListener{
 		}
 		
 	}
-	
-	public void repaint() {
-		super.repaint();
-	}
-	
+
 	/**
 	 *  Calculates the rate of braincell production from upgrades
 	 * @return production rate from upgrades
