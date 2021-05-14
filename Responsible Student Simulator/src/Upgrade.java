@@ -35,4 +35,8 @@ public class Upgrade {
 		return currentCost;
 	}
 	
+	public void setOwned(int owned) {
+		this.owned = owned;
+	}
+	
 }

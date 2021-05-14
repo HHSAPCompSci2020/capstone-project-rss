@@ -1,3 +1,4 @@
+import java.awt.Button;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
@@ -7,6 +8,7 @@ import javax.swing.JPanel;
 public class UpgradePanel extends JPanel implements ActionListener{
 
 	private ArrayList<Upgrade> upgrades = new ArrayList<Upgrade>();
+	private Button flipPhone;
 
 	private BrainCell brain;
 	
@@ -21,11 +23,20 @@ public class UpgradePanel extends JPanel implements ActionListener{
 		upgrades.add(new Upgrade(1000, 100000));
 		upgrades.add(new Upgrade(5000, 1000000));
 		
+		flipPhone = new Button("Flip Phone");
+		flipPhone.setBounds(100, 100, 100, 100);
+		flipPhone.addActionListener(this);
+		this.add(flipPhone);
+		
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		if (e.getSource().equals(flipPhone) && brain.getTotal() > upgrades.get(0).getCost()) {
+			buyUpgrade(0);
+			System.out.println("test");
+		}
 		
 	}
 	
@@ -49,6 +60,10 @@ public class UpgradePanel extends JPanel implements ActionListener{
 	public void buyUpgrade(int index) {
 		upgrades.get(index).buy();
 		brain.addTotal(-upgrades.get(index).getCost());
+	}
+	
+	public ArrayList<Upgrade> getUpgrade() {
+		return upgrades;
 	}
 
 }

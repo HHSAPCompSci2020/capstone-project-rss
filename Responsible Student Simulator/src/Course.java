@@ -1,7 +1,7 @@
 /*
  
- 	Author: 
- 	Version:
+ 	Author: Megan Choy
+ 	Version: 01
  
  */
 public class Course {

@@ -7,9 +7,9 @@
 
 public class BrainCell {
 	
-	double brainCellRate = 0;
-	double totalBrainCells = 0;
-	double prestigeLevel = 0;
+	private double brainCellRate = 0;
+	private double totalBrainCells = 0;
+	private double prestigeLevel = 0;
 	
 	public BrainCell() {
 		brainCellRate = 0;

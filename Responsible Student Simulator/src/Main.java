@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
+import javax.swing.JButton;
 
 public class Main extends JFrame {
 	
@@ -32,7 +33,7 @@ public class Main extends JFrame {
 	    upgradePanel = new UpgradePanel(brainCell);
 	    coursePanel = new CoursePanel(brainCell);
 	    	
-	    
+
 	    
 	    tabbedPane = new JTabbedPane();
 //	    tabbedPane.setTabPlacement(JTabbedPane.LEFT);
@@ -59,5 +60,20 @@ public class Main extends JFrame {
 	public void goToMenu() {
 		((CardLayout)cardPanel.getLayout()).next(cardPanel);
 //		menu.requestFocus();
+	}
+	
+	/**
+	 * Updates the total brain cell count with the passive income; call every second
+	 */
+	public void calculate() {
+		brainCell.addTotal(brainCell.getRate());
+	}
+	
+	public void prestige() {
+		brainCell.prestige();
+		for (int i = 0; i < upgradePanel.getUpgrade().size(); i++) {
+			upgradePanel.getUpgrade().get(i).setOwned(0);
+		}
+		
 	}
 }
