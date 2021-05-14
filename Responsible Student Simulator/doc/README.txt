@@ -52,7 +52,7 @@ Class List:
 * BrainCell: handles the math of total brain cells including the rate of the brain cell 
 * Course(name, time, payout, intensity): super class of all the courses that the student can take
 * CoursePanel: contains all buttons and classes related to courses, used to start production for courses and displaying buttons
-* Main: The main window that contains all GUI and math components
+* Main: Main: Contains main method
 * Menu: The window that gets refreshed to show the totals from BrainCell
 * OtherPanel: panel that contains the prestige buttons
 * Sleep: class that holds the percentage of sleep, can be decreased or increased
@@ -60,6 +60,7 @@ Class List:
 * Stress: class that holds the stress value, can be decreased or increased
 * Upgrade(name, rate, level): abstract class representing an upgrade; this includes both upgrades bought with brain cells and prestige currency
 * UpgradePanel: contains all buttons and classes related to the upgrades; used to buy upgrades, process upgrade production rate, and displaying buttons to the panel.
+* Window: The main window that contains all GUI and math components
 
 
 
