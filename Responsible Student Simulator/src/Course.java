@@ -62,6 +62,6 @@ public class Course {
 	}
 	
 	public double getProgress() {
-		return productionProgress / productionFinish;
+		return (double)productionProgress / productionFinish;
 	}
 }
