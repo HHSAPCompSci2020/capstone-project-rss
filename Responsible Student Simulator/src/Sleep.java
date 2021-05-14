@@ -27,12 +27,12 @@ public class Sleep {
 		return currentSleep;
 	}
 	
-	public void addSleep(double amount) {
-		currentSleep += amount;
+	public void setSleep(double amount) {
+		currentSleep = amount;
 	}
 	
-	public void sleep() {
-		currentSleep = 100;
+	public void addSleep(double amount) {
+		currentSleep += amount;
 	}
 	
 }

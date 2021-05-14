@@ -33,7 +33,7 @@ public class UpgradePanel extends JPanel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource().equals(flipPhone) && brain.getTotal() > upgrades.get(0).getCost()) {
+		if (e.getSource().equals(flipPhone) && brain.getTotal() >= upgrades.get(0).getCost()) {
 			buyUpgrade(0);
 			System.out.println("test");
 		}
@@ -62,7 +62,7 @@ public class UpgradePanel extends JPanel implements ActionListener{
 		brain.addTotal(-upgrades.get(index).getCost());
 	}
 	
-	public ArrayList<Upgrade> getUpgrade() {
+	public ArrayList<Upgrade> getUpgrades() {
 		return upgrades;
 	}
 

@@ -22,7 +22,7 @@ public class Menu extends JPanel implements ActionListener {
 		this.window = window;
 		this.brainCell = brainCell;
 		
-		JLabel brainRates = new JLabel("Brain Cells: " + brainCell.getTotal() + "\n Brain Cell Rate: " + brainCell.getRate(), JLabel.CENTER);
+		JLabel brainRates = new JLabel("Brain Cells: " + brainCell.getTotal() + "\n Brain Cell Rate: " + brainCell.getRate() + "\n Stress Level: " + brainCell.stress.getStress() + "\n Sleep Level: " + brainCell.sleep.getSleep(), JLabel.CENTER);
 	
 		add(brainRates, BorderLayout.PAGE_START);
 

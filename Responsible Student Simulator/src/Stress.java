@@ -25,6 +25,10 @@ public class Stress {
 		return currentStress;
 	}
 	
+	public void setStress(double amount) {
+		currentStress = amount;
+	}
+	
 	public void addStress(double amount) {
 		currentStress += amount;
 	}

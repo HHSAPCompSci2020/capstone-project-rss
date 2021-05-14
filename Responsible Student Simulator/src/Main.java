@@ -71,8 +71,8 @@ public class Main extends JFrame {
 	
 	public void prestige() {
 		brainCell.prestige();
-		for (int i = 0; i < upgradePanel.getUpgrade().size(); i++) {
-			upgradePanel.getUpgrade().get(i).setOwned(0);
+		for (int i = 0; i < upgradePanel.getUpgrades().size(); i++) {
+			upgradePanel.getUpgrades().get(i).setOwned(0);
 		}
 		
 	}
