@@ -16,7 +16,7 @@ public class Upgrade {
 	public Upgrade(double baseProduction, double baseCost) {
 		this.baseCost = baseCost;
 		this.baseProduction = baseProduction;
-		currentProduction = baseProduction;
+		currentProduction = 0;
 		currentCost = baseCost;
 		owned = 0;
 	}
@@ -37,6 +37,10 @@ public class Upgrade {
 	
 	public void setOwned(int owned) {
 		this.owned = owned;
+	}
+	
+	public int getOwned() {
+		return owned;
 	}
 	
 }

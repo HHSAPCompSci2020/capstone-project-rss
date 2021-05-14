@@ -68,8 +68,14 @@ public class BrainCell {
 	 * Causes the amount of sleep and stress to decrease; call every second
 	 */
 	public void act() {
-		sleep.addSleep(-1);
-		stress.addStress(-1);
+		if (sleep.getSleep() > 0) {
+			sleep.addSleep(-1);
+		}
+		if (stress.getStress() > 0) {
+			stress.addStress(-1);
+		}
+
+	
 	}
 	
 }

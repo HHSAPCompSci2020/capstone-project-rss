@@ -27,7 +27,7 @@ public class Menu extends JPanel implements ActionListener {
 		this.sleep = sleep;
 		this.stress = stress;
 		
-		brainRates = new JLabel("Brain Cells: " + total + "\n Brain Cell Rate: " + rate + "\n Stress Level: " + stress + "\n Sleep Level: " + sleep, JLabel.CENTER);
+		brainRates = new JLabel("Brain Cells: " + (int)total + "\n Brain Cell Rate: " + (int)rate + "\n Stress Level: " + (int)stress + "\n Sleep Level: " + (int)sleep, JLabel.CENTER);
 		
 		add(brainRates, BorderLayout.PAGE_START);
 		
@@ -36,7 +36,7 @@ public class Menu extends JPanel implements ActionListener {
 	}
 	
 	public void repaint(double total, double rate, double stress, double sleep) {
-		brainRates.setText("Brain Cells: " + total + "\n Brain Cell Rate: " + rate + "\n Stress Level: " + stress + "\n Sleep Level: " + sleep);
+		brainRates.setText("Brain Cells: " + (int)total + "\n Brain Cell Rate: " + (int)rate + "\n Stress Level: " + (int)stress + "\n Sleep Level: " + (int)sleep);
 		super.repaint();
 	}
 	

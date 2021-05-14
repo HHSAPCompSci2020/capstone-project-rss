@@ -20,6 +20,7 @@ public class Main extends JFrame {
 	private Menu menu;
 	private UpgradePanel upgradePanel;
 	private CoursePanel coursePanel;
+	private OtherPanel otherPanel;
 	private BrainCell brainCell;
 	private Timer timer;
 	
@@ -37,6 +38,7 @@ public class Main extends JFrame {
 	    menu = new Menu(this, brainCell.getTotal(), brainCell.getRate(), brainCell.stress.getStress(), brainCell.sleep.getSleep());
 	    upgradePanel = new UpgradePanel(brainCell);
 	    coursePanel = new CoursePanel(brainCell);
+	    otherPanel = new OtherPanel(brainCell);
 	    	
 
 	    
@@ -44,6 +46,7 @@ public class Main extends JFrame {
 //	    tabbedPane.setTabPlacement(JTabbedPane.LEFT);
 	    tabbedPane.add("Upgrades", upgradePanel);
 	    tabbedPane.add("Courses", coursePanel);
+	    tabbedPane.add("Prestige", otherPanel);
 
 	    
 	    splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, menu, tabbedPane);
@@ -55,12 +58,20 @@ public class Main extends JFrame {
 	    add(splitPane);
 	    setVisible(true);
 	    
-		timer = new Timer(1000, new ActionListener() {
+		timer = new Timer(17, new ActionListener() {
+			int counter = 0;
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-		   
-		    	brainCell.act();
-		    	calculate();
+		    	counter++;
+		    	if (counter % 60 == 0) {
+		    	 	upgradePanel.calculateRate();
+			    	brainCell.act();
+			    	calculate();
+			    	counter = 0;
+		    	}
+		    	if (otherPanel.prestiged) {
+		    		prestige();
+		    	}
 		    	menu.repaint(brainCell.getTotal(), brainCell.getRate(), brainCell.stress.getStress(), brainCell.sleep.getSleep());
 		        repaint();
 		    }
@@ -84,7 +95,6 @@ public class Main extends JFrame {
 	 * Updates the total brain cell count with the passive income; call every second
 	 */
 	public void calculate() {
-	 	System.out.println("hello");
 		brainCell.addTotal(brainCell.getRate());
 	}
 	
