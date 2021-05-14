@@ -2,7 +2,7 @@
 
 Responsible Student Simulator
 Authors: Jeremie Park, Megan Choy
-Revision: 5/7/21
+Revision: 5/14/21
 
 Introduction: 
 Responsible Student Simulator (RSS) is an idle simulator game for people who enjoy seeing numbers grow. Users control a student in high school and try to survive through various events, including passing hard courses, attending school events, and managing stress and sleep. The currency used in this game are brain cells that are gained by the second and the rate can be increased by upgrading the student’s supplies and attending harder courses. However, there are ways that brain cell production can decrease, such as negative emotions and not getting enough sleep. The ultimate goal is to finish 4 years of highschool!
@@ -51,16 +51,20 @@ Stretch Features:
 Class List:
 * BrainCell: handles the math of total brain cells including the rate of the brain cell 
 * Course(name, time, payout, intensity): super class of all the courses that the student can take
-* Upgrade(name, rate, level): abstract class representing an upgrade; this includes both upgrades bought with brain cells and prestige currency
-* Menu: The actual window with all the components of the GUI
-* StartMenu: Prompts the user give a name and a start button
-* UpgradesPanel:
-* CoursePanel:
+* CoursePanel: contains all buttons and classes related to courses, used to start production for courses and displaying buttons
+* Main: The main window that contains all GUI and math components
+* Menu: The window that gets refreshed to show the totals from BrainCell
+* OtherPanel: panel that contains the prestige buttons
 * Sleep: class that holds the percentage of sleep, can be decreased or increased
+* StartMenu: menu that is prompted from the start
 * Stress: class that holds the stress value, can be decreased or increased
+* Upgrade(name, rate, level): abstract class representing an upgrade; this includes both upgrades bought with brain cells and prestige currency
+* UpgradePanel: contains all buttons and classes related to the upgrades; used to buy upgrades, process upgrade production rate, and displaying buttons to the panel.
+
 
 
 Credits:
-* Jeremie: BrainCell, Upgrade 
-* Megan: Menu, CoursePanel, UpgradePanel, StartMenu
+* Jeremie: Coded BrainCell, Upgrade, UpgradePanel, Other panel, and the sleep and stress classes. 
+	Also created the math to calculate braincell fields across classes, and the layout for the panels.
+* Megan:  Main, Menu, Course, CourseButton, StartMenu
 * TBD: Prestige, Sleep, Stress
