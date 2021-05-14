@@ -8,6 +8,12 @@ import javax.swing.JPanel;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 
+/**
+ * JPanel that contains all buttons and classes related to the upgrades. The buttons are used to buy upgrades
+ * and this class processes upgrade production rate.
+ * @author Jeremie Park
+ *
+ */
 public class UpgradePanel extends JPanel implements ActionListener{
 
 	private ArrayList<Upgrade> upgrades = new ArrayList<Upgrade>();

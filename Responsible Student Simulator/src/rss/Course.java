@@ -1,8 +1,8 @@
 package rss;
 /*
  
- 	Author: Megan Choy
- 	Version: 01
+ 	Author: Jeremie Park, Megan Choy
+ 	Version: 02
  
  */
 public class Course {

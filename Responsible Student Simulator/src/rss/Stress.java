@@ -1,13 +1,10 @@
 package rss;
-/*
- 	
- 	Represents the stress level of the student.
- 	
- 	Author: Jeremie Park
- 	Version: 01
- 
- */
 
+/**
+ * Class that represents the stress level of the student
+ * @author Jeremie Park
+ *
+ */
 public class Stress {
 	
 	double currentStress;

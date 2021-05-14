@@ -1,11 +1,10 @@
 package rss;
-/*
- 
- 	Author: Jeremie Park
- 	Version: 01
- 
- */
 
+/**
+ * Blueprint class that represents an upgrade, which includes its base cost and base production
+ * @author Jeremie Park
+ *
+ */
 public class Upgrade {
 
 	private double baseCost;

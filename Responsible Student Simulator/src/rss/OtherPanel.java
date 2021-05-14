@@ -8,6 +8,11 @@ import javax.swing.JPanel;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 
+/**
+ * JPanel that contians buttons for prestige
+ * @author Jeremie Park
+ *
+ */
 public class OtherPanel extends JPanel implements ActionListener{
 
 	private BrainCell brain;

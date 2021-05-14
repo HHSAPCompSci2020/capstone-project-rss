@@ -1,13 +1,10 @@
 package rss;
-/*
- 
- 	Represents the sleep level of the student.
- 
- 	Author: Jeremie Park
- 	Version: 1
- 
- */
 
+/**
+ * Class that represents the sleep level of the student
+ * @author Jeremie Park
+ *
+ */
 public class Sleep {
 	
 	double maxSleep;

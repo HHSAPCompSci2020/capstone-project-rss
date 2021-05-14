@@ -6,6 +6,11 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+/**
+ * Contains all buttons and classes related to courses and used to start production for courses and displaying buttons
+ * @author Jeremie Park, Megan Choy
+ *
+ */
 public class CoursePanel extends JPanel implements ActionListener{
 
 	private ArrayList<Course> courses = new ArrayList<Course>();
@@ -20,7 +25,7 @@ public class CoursePanel extends JPanel implements ActionListener{
 		math = new Course("Algebra", 100, 50, 5);
 		courses.add(math);
 		
-		mathButton = new JButton("<html>Flip Phone<br>maffs?<br>Cost: ");
+		mathButton = new JButton("<html>Math<br>maffs?<br>Cost: ");
 		mathButton.setText(mathButton.getText() + (int)courses.get(0).getCost());
 		mathButton.setText(mathButton.getText() + "<br>Level: ");
 		mathButton.setText(mathButton.getText() + (int)courses.get(0).getLevel());

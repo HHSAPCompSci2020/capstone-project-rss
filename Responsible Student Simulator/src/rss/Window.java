@@ -37,7 +37,7 @@ public class Window extends JFrame {
 	    
 	    brainCell = new BrainCell();
 	    startMenu = new StartMenu(this);    
-	    menu = new Menu(this, brainCell.getTotal(), brainCell.getRate(), brainCell.stress.getStress(), brainCell.sleep.getSleep());
+	    menu = new Menu(this, brainCell);
 	    upgradePanel = new UpgradePanel(brainCell);
 	    coursePanel = new CoursePanel(brainCell);
 	    otherPanel = new OtherPanel(brainCell);
@@ -81,7 +81,7 @@ public class Window extends JFrame {
 		    		brainCell.addTotal(coursePanel.getCourses().get(0).getProduction());
 		    	}
 		    	
-		    	menu.repaint(brainCell.getTotal(), brainCell.getRate(), brainCell.stress.getStress(), brainCell.sleep.getSleep());
+		    	menu.repaint();
 		        repaint();
 		    }
 		});

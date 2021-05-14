@@ -5,6 +5,11 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+/**
+ * Menu that is prompted from the start
+ * @author Megan Choy
+ *
+ */
 public class StartMenu extends JPanel implements ActionListener{
 
 	Window window;
