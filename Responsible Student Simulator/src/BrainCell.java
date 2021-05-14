@@ -7,15 +7,15 @@
 
 public class BrainCell {
 	
-	private double brainCellRate = 0;
-	private double totalBrainCells = 0;
-	private double prestigeLevel = 0;
+	private double brainCellRate;
+	private double totalBrainCells;
+	private double prestigeLevel;
 	protected Sleep sleep;
 	protected Stress stress;
 	
 	public BrainCell() {
 		brainCellRate = 0;
-		totalBrainCells = 0;
+		totalBrainCells = 100;
 		prestigeLevel = 0;
 		sleep = new Sleep();
 		stress = new Stress();

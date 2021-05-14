@@ -5,6 +5,10 @@ import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JButton;
+import javax.swing.Timer;
+import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Main extends JFrame {
 	
@@ -17,6 +21,7 @@ public class Main extends JFrame {
 	private UpgradePanel upgradePanel;
 	private CoursePanel coursePanel;
 	private BrainCell brainCell;
+	private Timer timer;
 	
 	public Main(String title) {
 		super(title);
@@ -29,7 +34,7 @@ public class Main extends JFrame {
 	    
 	    brainCell = new BrainCell();
 	    startMenu = new StartMenu(this);    
-	    menu = new Menu(this, brainCell);
+	    menu = new Menu(this, brainCell.getTotal(), brainCell.getRate(), brainCell.stress.getStress(), brainCell.sleep.getSleep());
 	    upgradePanel = new UpgradePanel(brainCell);
 	    coursePanel = new CoursePanel(brainCell);
 	    	
@@ -50,6 +55,19 @@ public class Main extends JFrame {
 	    add(splitPane);
 	    setVisible(true);
 	    
+		timer = new Timer(1000, new ActionListener() {
+		    @Override
+		    public void actionPerformed(ActionEvent e) {
+		   
+		    	brainCell.act();
+		    	calculate();
+		    	menu.repaint(brainCell.getTotal(), brainCell.getRate(), brainCell.stress.getStress(), brainCell.sleep.getSleep());
+		        repaint();
+		    }
+		});
+		
+		timer.start();
+	    
 	}
 
 	public static void main(String[] args)
@@ -66,6 +84,7 @@ public class Main extends JFrame {
 	 * Updates the total brain cell count with the passive income; call every second
 	 */
 	public void calculate() {
+	 	System.out.println("hello");
 		brainCell.addTotal(brainCell.getRate());
 	}
 	

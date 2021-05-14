@@ -6,6 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+
 /*
  
  	Author:
@@ -15,23 +16,34 @@ import javax.swing.JPanel;
 public class Menu extends JPanel implements ActionListener {
 
 	Main window;
-	private BrainCell brainCell;
+	JLabel brainRates;
+	double rate, total, stress, sleep;
 	
-	public Menu (Main window, BrainCell brainCell) {
+	public Menu (Main window, double total, double rate, double stress, double sleep) {
 		super(new BorderLayout());
 		this.window = window;
-		this.brainCell = brainCell;
+		this.total = total;
+		this.rate = rate;
+		this.sleep = sleep;
+		this.stress = stress;
 		
-		JLabel brainRates = new JLabel("Brain Cells: " + brainCell.getTotal() + "\n Brain Cell Rate: " + brainCell.getRate() + "\n Stress Level: " + brainCell.stress.getStress() + "\n Sleep Level: " + brainCell.sleep.getSleep(), JLabel.CENTER);
-	
+		brainRates = new JLabel("Brain Cells: " + total + "\n Brain Cell Rate: " + rate + "\n Stress Level: " + stress + "\n Sleep Level: " + sleep, JLabel.CENTER);
+		
 		add(brainRates, BorderLayout.PAGE_START);
+		
+
 
 	}
 	
-
+	public void repaint(double total, double rate, double stress, double sleep) {
+		brainRates.setText("Brain Cells: " + total + "\n Brain Cell Rate: " + rate + "\n Stress Level: " + stress + "\n Sleep Level: " + sleep);
+		super.repaint();
+	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+
 		
 	}
 
