@@ -7,9 +7,9 @@ import javax.swing.JPanel;
 
 public class StartMenu extends JPanel implements ActionListener{
 
-	Main window;
+	Window window;
 	
-	public StartMenu(Main window) {
+	public StartMenu(Window window) {
 		this.window = window;
 		
 		JButton button = new JButton("Press me!");

@@ -16,11 +16,11 @@ import javax.swing.JPanel;
  */
 public class Menu extends JPanel implements ActionListener {
 
-	Main window;
+	Window window;
 	JLabel brainRates;
 	double rate, total, stress, sleep;
 	
-	public Menu (Main window, double total, double rate, double stress, double sleep) {
+	public Menu (Window window, double total, double rate, double stress, double sleep) {
 		super(new BorderLayout());
 		this.window = window;
 		this.total = total;
