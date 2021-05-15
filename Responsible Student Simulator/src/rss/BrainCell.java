@@ -16,7 +16,7 @@ public class BrainCell {
 	
 	public BrainCell() {
 		brainCellRate = 0;
-		totalBrainCells = 100;
+		totalBrainCells = 0;
 		prestigeLevel = 0;
 		sleep = new Sleep();
 		stress = new Stress();
