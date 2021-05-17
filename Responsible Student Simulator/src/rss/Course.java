@@ -7,41 +7,28 @@ package rss;
  */
 public class Course {
 	
-	private int level;
-	private double baseProduction, baseCost;
-	private double currentProduction, currentCost;
+	private double production, cost;
 	protected boolean inProduction;
 	private int productionProgress;
 	private int productionFinish;
-	private String name;
+	private String name, desc;
+	private boolean unlocked;
 	
-	public Course(String name, double baseProduction, double baseCost, double time) {
-		this.baseCost = baseCost;
-		this.baseProduction = baseProduction;
-		level = 1;
-		currentProduction = baseProduction;
-		currentCost = baseProduction;
+	public Course(String name, String desc, double production, double cost, double time) {
+		this.cost = cost;
+		this.production = production;
 		this.name = name;
+		this.desc = desc;
 		inProduction = false;
 		productionFinish = (int)(time * 60);
 		productionProgress = 0;
-		
+		unlocked = false;
 	}
 	
 	public void run() {
 		if (inProduction) {
 			productionProgress++;
 		}
-	}
-	
-	public int getLevel() {
-		return level;
-	}
-	
-	public void levelUp() {
-		currentCost = baseCost * Math.pow(1.15, level);
-		level++;
-		currentProduction = baseProduction * level;
 	}
 	
 	public void startProduction() {
@@ -54,15 +41,40 @@ public class Course {
 	}
 	
 	public double getProduction() {
-		currentProduction = level * baseProduction;
-		return currentProduction;
+		return production;
 	}
 	
 	public double getCost() {
-		return currentCost;
+		return cost;
 	}
 	
 	public double getProgress() {
 		return (double)productionProgress / productionFinish;
+	}
+	
+	public void buy(double brainCellTotal) {
+		if (cost == 0) {
+			unlocked = true;
+		}
+		
+		if (brainCellTotal >= cost) {
+			unlocked = true;
+		}
+	}
+	
+	public boolean getUnlocked() {
+		return unlocked;
+	}
+	
+	public String toString() {
+		String s = "<html>" + name + "<br>" + desc + "<br>Production: " + (int)getProduction();
+		
+		if (unlocked) {
+			s += "<br>Unlocked: True";
+		} else {
+			s += "<br>Locked, Cost: " + (int)cost;
+		}
+		
+		return s;
 	}
 }

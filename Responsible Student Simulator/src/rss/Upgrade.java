@@ -12,10 +12,13 @@ public class Upgrade {
 	private double baseProduction;
 	private double currentProduction;
 	private int owned;
+	private String name, desc;
 	
-	public Upgrade(double baseProduction, double baseCost) {
+	public Upgrade(String name, String desc, double baseProduction, double baseCost) {
 		this.baseCost = baseCost;
 		this.baseProduction = baseProduction;
+		this.name = name;
+		this.desc = desc;
 		currentProduction = 0;
 		currentCost = baseCost;
 		owned = 0;
@@ -43,4 +46,7 @@ public class Upgrade {
 		return owned;
 	}
 	
+	public String toString() {
+		return "<html>" + name + "<br>" + desc + "<br>Cost: " + (int)getCost() + "<br>Owned: " + getOwned();
+	}
 }
