@@ -19,7 +19,7 @@ public class UpgradePanel extends JPanel implements ActionListener{
 
 	private ArrayList<Upgrade> upgrades = new ArrayList<Upgrade>();
 	private ArrayList<JButton> buttons = new ArrayList<JButton>();
-	private JButton flipPhone, nokiaPhone, smartPhone, miniTablet, tablet, laptop, pc;
+	private JButton flipPhone, nokiaPhone, smartPhone, miniTablet, tablet, laptop, pc, monitor, laserMouse, mechanicalKeybaord, hologramDisplay;
 
 	private BrainCell brain;
 	
@@ -33,74 +33,34 @@ public class UpgradePanel extends JPanel implements ActionListener{
 		upgrades.add(new Upgrade("Tablet", "Just a phone that's too big", 100, 10000));
 		upgrades.add(new Upgrade("Laptop", "No more pocket edition minecraft", 500, 50000));
 		upgrades.add(new Upgrade("PC", "Now you need a camera for Zoom", 1000, 100000));
-//		upgrades.add(new Upgrade(5000, 1000000));
-		
-		flipPhone = new JButton(upgrades.get(0).toString());
-//		flipPhone.setText(flipPhone.getText() + (int)upgrades.get(0).getCost());
-//		flipPhone.setText(flipPhone.getText() + "<br>Owned: ");
-//		flipPhone.setText(flipPhone.getText() + (int)upgrades.get(0).getOwned());
-
-
-		nokiaPhone = new JButton(upgrades.get(1).toString());
-//		nokiaPhone.setText(nokiaPhone.getText() + (int)upgrades.get(1).getCost());
-//		nokiaPhone.setText(nokiaPhone.getText() + "<br>Owned: ");
-//		nokiaPhone.setText(nokiaPhone.getText() + (int)upgrades.get(1).getOwned());
-		
-		smartPhone = new JButton(upgrades.get(2).toString());
-//		smartPhone.setText(smartPhone.getText() + (int)upgrades.get(2).getCost());
-//		smartPhone.setText(smartPhone.getText() + "<br>Owned: ");
-//		smartPhone.setText(smartPhone.getText() + (int)upgrades.get(2).getOwned());
-		
-		miniTablet = new JButton(upgrades.get(3).toString());
-		tablet = new JButton(upgrades.get(4).toString());
-		laptop = new JButton(upgrades.get(5).toString());
-		pc = new JButton(upgrades.get(6).toString());
+		upgrades.add(new Upgrade("Ultrawide Monitor", "It's for school mom I swear", 5000, 500000));
+		upgrades.add(new Upgrade("Laser Mouse", "Because sometimes you need to hit that kahoot answer with *precision*", 10000, 1000000));
+		upgrades.add(new Upgrade("Mechanical Keyboard", "Legends say you can type so fast that you actually have time to finish your APUSH exam", 1000000, 5000000));
+		upgrades.add(new Upgrade("Hologram Display", "I sense a plot to destroy the Jedi...", 1000000, 10000000));
 	
 		//Add to the buttons arraylist
-		buttons.add(flipPhone);
-		buttons.add(nokiaPhone);
-		buttons.add(smartPhone);
-		buttons.add(miniTablet);
-		buttons.add(tablet);
-		buttons.add(laptop);
-		buttons.add(pc);
-	
-		//add to actionlistener
-		flipPhone.addActionListener(this);
-		nokiaPhone.addActionListener(this);
-		smartPhone.addActionListener(this);
-		miniTablet.addActionListener(this);
-		tablet.addActionListener(this);
-		laptop.addActionListener(this);
-		pc.addActionListener(this);
-
-		//add to panel
-		this.add(flipPhone);
-		this.add(nokiaPhone);
-		this.add(smartPhone);
-		this.add(miniTablet);
-		this.add(tablet);
-		this.add(laptop);
-		this.add(pc);
+		buttons.add(new JButton(upgrades.get(0).toString()));
+		buttons.add(new JButton(upgrades.get(1).toString()));
+		buttons.add(new JButton(upgrades.get(2).toString()));
+		buttons.add(new JButton(upgrades.get(3).toString()));
+		buttons.add(new JButton(upgrades.get(4).toString()));
+		buttons.add(new JButton(upgrades.get(5).toString()));
+		buttons.add(new JButton(upgrades.get(6).toString()));
+		buttons.add(new JButton(upgrades.get(7).toString()));
+		buttons.add(new JButton(upgrades.get(8).toString()));
+		buttons.add(new JButton(upgrades.get(9).toString()));
+		buttons.add(new JButton(upgrades.get(10).toString()));
+		
+		for (int i = 0; i < buttons.size(); i++) {
+			buttons.get(i).addActionListener(this);
+			this.add(buttons.get(i));
+		}
 	}
 	
 
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-//		if (e.getSource().equals(flipPhone) && brain.getTotal() >= upgrades.get(0).getCost()) {
-//			buyUpgrade(0);
-//			updateButtons(0);
-//			repaint();
-//		} else if (e.getSource().equals(nokiaPhone) && brain.getTotal() >= upgrades.get(1).getCost()) {
-//			buyUpgrade(1);
-//			updateButtons(1);
-//			repaint();
-//		} else if (e.getSource().equals(smartPhone) && brain.getTotal() >= upgrades.get(2).getCost()) {
-//			buyUpgrade(2);
-//			updateButtons(2);
-//			repaint();
-//		}
 		
 		int index = buttons.indexOf(e.getSource());
 		
@@ -138,22 +98,6 @@ public class UpgradePanel extends JPanel implements ActionListener{
 	}
 	
 	private void updateButtons(int index) {
-//		if (index == 0) {
-//			flipPhone.setText("<html>Flip Phone<br>These are ancient, do you even know what they are?<br>Cost: ");
-//			flipPhone.setText(flipPhone.getText() + (int)upgrades.get(0).getCost());
-//			flipPhone.setText(flipPhone.getText() + "<br>Owned: ");
-//			flipPhone.setText(flipPhone.getText() + (int)upgrades.get(0).getOwned());
-//		} else if (index == 1) {
-//			nokiaPhone.setText("<html>Nokia Phone<br>I threw it on the floor, and it broke the floor<br>Cost: ");
-//			nokiaPhone.setText(nokiaPhone.getText() + (int)upgrades.get(1).getCost());
-//			nokiaPhone.setText(nokiaPhone.getText() + "<br>Owned: ");
-//			nokiaPhone.setText(nokiaPhone.getText() + (int)upgrades.get(1).getOwned());
-//		} else if (index == 2) {
-//			smartPhone.setText("<html>Nokia Phone<br>How does one use the snapbook?<br>Cost: ");
-//			smartPhone.setText(smartPhone.getText() + (int)upgrades.get(2).getCost());
-//			smartPhone.setText(smartPhone.getText() + "<br>Owned: ");
-//			smartPhone.setText(smartPhone.getText() + (int)upgrades.get(2).getOwned());
-//		}
 
 		buttons.get(index).setText(upgrades.get(index).toString());
 	}
