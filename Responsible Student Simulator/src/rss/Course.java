@@ -8,7 +8,8 @@ package rss;
 public class Course {
 	
 	private double production, cost;
-	protected boolean inProduction;
+	protected static boolean inProduction; //If any of the courses are producing 
+	private boolean running; // If this specific course is running
 	private int productionProgress;
 	private int productionFinish;
 	private String name, desc;
@@ -26,18 +27,20 @@ public class Course {
 	}
 	
 	public void run() {
-		if (inProduction) {
+		if (running) {
 			productionProgress++;
 		}
 	}
 	
 	public void startProduction() {
 		inProduction = true;
+		running = true;
 	}
 	
 	public void endProduction() {
 		productionProgress = 0;
 		inProduction = false;
+		running = false;
 	}
 	
 	public double getProduction() {
@@ -50,6 +53,10 @@ public class Course {
 	
 	public double getProgress() {
 		return (double)productionProgress / productionFinish;
+	}
+	
+	public boolean getRunning() {
+		return running;
 	}
 	
 	public void buy(double brainCellTotal) {

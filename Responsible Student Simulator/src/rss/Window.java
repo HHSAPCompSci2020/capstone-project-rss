@@ -25,7 +25,7 @@ public class Window extends JFrame {
 	private OtherPanel otherPanel;
 	private BrainCell brainCell;
 	private Timer timer;
-	
+		
 	public Window(String title) {
 		super(title);
 		setBounds(500, 50, 800, 1000);
@@ -73,14 +73,29 @@ public class Window extends JFrame {
 			    	counter = 0;
 		    	}
 		    	
-		    	if (coursePanel.getCourses().get(0).inProduction) {
-		    		coursePanel.getCourses().get(0).run();
+		    	if (Course.inProduction) {
+			    	for (int i = 0; i < coursePanel.getCourses().size(); i++) {
+			    		//No current other course is running, but this one should be
+			    		if (coursePanel.getCourses().get(i).getRunning()) {
+			    			coursePanel.getCourses().get(i).run();
+			    		}
+			    		
+				    	if (coursePanel.getCourses().get(i).getProgress() == 1) {
+			    		System.out.println("end");
+			    		coursePanel.getCourses().get(i).endProduction();
+			    		brainCell.addTotal(coursePanel.getCourses().get(i).getProduction());
+			    	}
+			    	}
 		    	}
-		    	if (coursePanel.getCourses().get(0).getProgress() == 1) {
-		    		System.out.println("end");
-		    		coursePanel.getCourses().get(0).endProduction();
-		    		brainCell.addTotal(coursePanel.getCourses().get(0).getProduction());
-		    	}
+
+//		    	if (coursePanel.getCourses().get(0).inProduction) {
+//		    		coursePanel.getCourses().get(0).run();
+//		    	}
+//		    	if (coursePanel.getCourses().get(0).getProgress() == 1) {
+//		    		System.out.println("end");
+//		    		coursePanel.getCourses().get(0).endProduction();
+//		    		brainCell.addTotal(coursePanel.getCourses().get(0).getProduction());
+//		    	}
 		    	
 		    	menu.repaint();
 		        repaint();

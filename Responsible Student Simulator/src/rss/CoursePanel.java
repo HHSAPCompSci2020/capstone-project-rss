@@ -27,7 +27,7 @@ public class CoursePanel extends JPanel implements ActionListener {
 		this.brainCell = brainCell;
 
 		math = new Course("Algebra", "maffs?", 100, 0, 5);
-		science = new Course("Biology", "cells studying themselves", 500, 1000, 10);
+		science = new Course("Biology", "cells studying themselves", 500, 10, 10);
 		courses.add(math);
 		courses.add(science);
 
@@ -51,16 +51,18 @@ public class CoursePanel extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 
 		int index = buttons.indexOf(e.getSource());
-//			System.out.println("index: " + index);
-		if (courses.get(index).getUnlocked() && courses.get(index).getProgress() == 0) { // If course is unlocked and
-																							// has not started timer
-//				System.out.println("start");
+		courses.get(index);
+		//			System.out.println("index: " + index);
+		if (Course.inProduction) {
+			return;
+		} else if (courses.get(index).getUnlocked() && courses.get(index).getProgress() == 0) { // If course is unlocked and nothing is in production
+				System.out.println("start");
 			courses.get(index).startProduction();
 		} else if (!courses.get(index).getUnlocked()) { // If unlocked, try to buy
-//				System.out.println("attempt to buy");
+				System.out.println("attempt to buy");
 			courses.get(index).buy(brainCell.getTotal());
 			buttons.get(index).setText(courses.get(index).toString());
-		}
+		} 
 	}
 
 	public ArrayList<Course> getCourses() {
