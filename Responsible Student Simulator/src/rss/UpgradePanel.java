@@ -58,18 +58,10 @@ public class UpgradePanel extends JPanel implements ActionListener{
 		miniTablet = new JButton("Mini Tablet");
 		tablet = new JButton("Tablet");
 				
-
-
-
-		
-	
-
 		this.add(smartPhone);
 		this.add(miniTablet);
 		this.add(tablet);
 	}
-	
-
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
