@@ -16,7 +16,9 @@ public class Stress {
 	}
 	
 	public void act() {
-		currentStress++;
+		if (currentStress >= 0.2) {
+			currentStress -= 0.2;
+		}
 	}
 	
 	public double getStress() {
@@ -28,7 +30,13 @@ public class Stress {
 	}
 	
 	public void addStress(double amount) {
-		currentStress += amount;
+		if (currentStress + amount > 100) {
+			currentStress = 100;
+		} else if (currentStress + amount < 0) {
+			currentStress = 0;
+		} else {
+			currentStress += amount;
+		}
 	}
 	
 }

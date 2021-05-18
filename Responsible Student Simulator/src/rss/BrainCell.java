@@ -16,7 +16,7 @@ public class BrainCell {
 	
 	public BrainCell() {
 		brainCellRate = 0;
-		totalBrainCells = 0;
+		totalBrainCells = 100000;
 		prestigeLevel = 0;
 		sleep = new Sleep();
 		stress = new Stress();
@@ -69,6 +69,10 @@ public class BrainCell {
 		return sleep.getSleep();
 	}
 	
+	public void addStress(double amount) {
+		stress.addStress(amount);
+	}
+	
 	public double getStress() {
 		return stress.getStress();
 	}
@@ -77,14 +81,8 @@ public class BrainCell {
 	 * Causes the amount of sleep and stress to decrease; call every second
 	 */
 	public void act() {
-		if (sleep.getSleep() > 0) {
-			sleep.addSleep(-1);
-		}
-		if (stress.getStress() > 0) {
-			stress.addStress(-1);
-		}
-
-	
+		sleep.act();
+		stress.act();
 	}
 	
 }

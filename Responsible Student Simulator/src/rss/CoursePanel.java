@@ -73,6 +73,9 @@ public class CoursePanel extends JPanel implements ActionListener {
 		} else if (!courses.get(index).getUnlocked()) { // If unlocked, try to buy
 				System.out.println("attempt to buy");
 			courses.get(index).buy(brainCell.getTotal());
+			if (courses.get(index).getUnlocked()) {
+				brainCell.addTotal(-courses.get(index).getCost());
+			}
 			buttons.get(index).setText(courses.get(index).toString());
 		} 
 	}

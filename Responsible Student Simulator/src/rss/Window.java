@@ -80,7 +80,8 @@ public class Window extends JFrame {
 			    		
 				    	if (coursePanel.getCourses().get(i).getProgress() == 1) {
 				    		System.out.println("end");
-				    		coursePanel.getCourses().get(i).endProduction();
+				    		brainCell.addStress((i+1) * 10);
+				    		System.out.println(brainCell.getStress());
 			    			brainCell.addTotal(coursePanel.getCourses().get(i).getProduction());
 				    	}
 			    	}
