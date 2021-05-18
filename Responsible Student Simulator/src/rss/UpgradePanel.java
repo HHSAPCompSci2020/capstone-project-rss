@@ -94,7 +94,7 @@ public class UpgradePanel extends JPanel implements ActionListener{
 	 * Updates the text of the button of the given index
 	 * @param index - index of the button to update
 	 */
-	private void updateButtons(int index) {
+	public void updateButtons(int index) {
 		buttons.get(index).setText(upgrades.get(index).toString());
 	}
 

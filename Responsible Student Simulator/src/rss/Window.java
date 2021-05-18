@@ -87,6 +87,11 @@ public class Window extends JFrame {
 			    	}
 		    	}
 		    	
+		    	if (otherPanel.prestiged) {
+		    		prestige();
+		    		otherPanel.prestiged = false;
+		    	}
+		    	
 		    	menu.repaint();
 		        repaint();
 		    }
@@ -109,10 +114,13 @@ public class Window extends JFrame {
 	}
 	
 	public void prestige() {
-		brainCell.prestige();
+		brainCell.prestige.prestige();
+		brainCell.setTotal(0);
 		for (int i = 0; i < upgradePanel.getUpgrades().size(); i++) {
 			upgradePanel.getUpgrades().get(i).setOwned(0);
+			upgradePanel.updateButtons(i);
 		}
+		upgradePanel.calculateRate();
 		
 	}
 }

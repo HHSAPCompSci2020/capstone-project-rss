@@ -18,13 +18,13 @@ public class OtherPanel extends JPanel implements ActionListener{
 	private BrainCell brain;
 	private JButton prestige, sleep;
 	private JButton example;
-	private boolean canPrestige;
 	protected boolean prestiged;
 	
 	public OtherPanel(BrainCell brain) {
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		this.brain = brain;
-		prestige = new JButton("<html><b>PRESTIGE</b><br>Reset ALL currnet progress to gain a permanent production modifier bonus.<br> Cost: 1,000,000,000 <br>Current Modifier: 1 </html>");
+		
+		prestige = new JButton(brain.prestige.toString());
 		sleep = new JButton("<html>Sleep<br>Go to sleep! Replenishes sleep back to 100.");
 		example = new JButton("example button for stress event");
 		
@@ -35,14 +35,15 @@ public class OtherPanel extends JPanel implements ActionListener{
 		this.add(prestige);
 		this.add(sleep);
 		this.add(example);
-		canPrestige = false;
 		prestiged = false;
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource().equals(prestige) && canPrestige) {
+		if (e.getSource().equals(prestige) && brain.getTotal() >= brain.prestige.getCost()) {
 			prestiged = true;
+			updateButtons();
+			repaint();
 		} else if (e.getSource().equals(sleep)) {
 			brain.sleep();
 		} else if (e.getSource().equals(example)) {
@@ -53,7 +54,10 @@ public class OtherPanel extends JPanel implements ActionListener{
 				brain.addStress(-10);
 			}
 		}
-		
+	}
+	
+	public void updateButtons() {
+		prestige.setText(brain.prestige.toString());
 	}
 	
 }

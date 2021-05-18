@@ -10,22 +10,22 @@ public class BrainCell {
 	
 	private double brainCellRate;
 	private double totalBrainCells;
-	private double prestigeLevel;
+	protected Prestige prestige;
 	private Sleep sleep;
 	private Stress stress;
 	
 	public BrainCell() {
 		brainCellRate = 0;
-		totalBrainCells = 100000;
-		prestigeLevel = 0;
+		totalBrainCells = (double)1100000000;
 		sleep = new Sleep();
 		stress = new Stress();
+		prestige = new Prestige("Prestige", "Reset ALL currnet progress to gain a permanent production modifier bonus.", 1000000000);
 	}
 	
 	public double getRate() {
 		double finalRate = brainCellRate;
 		double multipliers = 1;
-		multipliers += prestigeLevel;
+		multipliers += prestige.getOwned();
 		if (sleep.getSleep() < 30) {
 			multipliers -= 0.2;
 		} 
@@ -53,10 +53,6 @@ public class BrainCell {
 		brainCellRate += addAmount;
 	}
 	
-	public void prestige() {
-		prestigeLevel++;
-	}
-	
 	public void setRate(double amount) {
 		brainCellRate = amount;
 	}
@@ -75,6 +71,10 @@ public class BrainCell {
 	
 	public double getStress() {
 		return stress.getStress();
+	}
+	
+	public void setTotal(double amount) {
+		totalBrainCells = amount;
 	}
 	
 	/**
