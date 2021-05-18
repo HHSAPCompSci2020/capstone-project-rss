@@ -7,62 +7,81 @@ package rss;
  */
 public class Course {
 	
-	private int level;
-	private double baseProduction, baseCost;
-	private double currentProduction, currentCost;
-	protected boolean inProduction;
+	private double production, cost;
+	protected static boolean inProduction; //If any of the courses are producing 
+	private boolean running; // If this specific course is running
 	private int productionProgress;
 	private int productionFinish;
-	private String name;
+	private String name, desc;
+	private boolean unlocked;
 	
-	public Course(String name, double baseProduction, double baseCost, double time) {
-		this.baseCost = baseCost;
-		this.baseProduction = baseProduction;
-		level = 1;
-		currentProduction = baseProduction;
-		currentCost = baseProduction;
+	public Course(String name, String desc, double production, double cost, double time) {
+		this.cost = cost;
+		this.production = production;
 		this.name = name;
+		this.desc = desc;
 		inProduction = false;
 		productionFinish = (int)(time * 60);
 		productionProgress = 0;
-		
+		unlocked = false;
 	}
 	
 	public void run() {
-		if (inProduction) {
+		if (running) {
 			productionProgress++;
 		}
 	}
 	
-	public int getLevel() {
-		return level;
-	}
-	
-	public void levelUp() {
-		currentCost = baseCost * Math.pow(1.15, level);
-		level++;
-		currentProduction = baseProduction * level;
-	}
-	
 	public void startProduction() {
 		inProduction = true;
+		running = true;
 	}
 	
 	public void endProduction() {
 		productionProgress = 0;
 		inProduction = false;
+		running = false;
 	}
 	
 	public double getProduction() {
-		currentProduction = level * baseProduction;
-		return currentProduction;
+		return production;
 	}
 	
 	public double getCost() {
-		return currentCost;
+		return cost;
 	}
 	
 	public double getProgress() {
 		return (double)productionProgress / productionFinish;
+	}
+	
+	public boolean getRunning() {
+		return running;
+	}
+	
+	public void buy(double brainCellTotal) {
+		if (cost == 0) {
+			unlocked = true;
+		}
+		
+		if (brainCellTotal >= cost) {
+			unlocked = true;
+		}
+	}
+	
+	public boolean getUnlocked() {
+		return unlocked;
+	}
+	
+	public String toString() {
+		String s = "<html>" + name + "<br>" + desc + "<br>Production: " + (int)getProduction();
+		
+		if (unlocked) {
+			s += "<br>Unlocked: True";
+		} else {
+			s += "<br>Locked, Cost: " + (int)cost;
+		}
+		
+		return s;
 	}
 }
