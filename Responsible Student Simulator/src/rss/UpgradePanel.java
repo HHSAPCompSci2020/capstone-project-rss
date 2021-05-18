@@ -7,6 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.BoxLayout;
+import java.awt.GridLayout;
 import javax.swing.JButton;
 
 /**
@@ -20,11 +21,10 @@ public class UpgradePanel extends JPanel implements ActionListener{
 	private ArrayList<Upgrade> upgrades = new ArrayList<Upgrade>();
 	private ArrayList<JButton> buttons = new ArrayList<JButton>();
 	private JButton flipPhone, nokiaPhone, smartPhone, miniTablet, tablet, laptop, pc, monitor, laserMouse, mechanicalKeybaord, hologramDisplay;
-
 	private BrainCell brain;
 	
 	public UpgradePanel(BrainCell brain) {
-		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+		setLayout(new GridLayout(3, 4));
 		this.brain = brain;
 		upgrades.add(new Upgrade("Flip Phone", "These are ancient, do you even know what they are?", 1, 10));
 		upgrades.add(new Upgrade("Nokia Phone", "I threw it on the floor, and it broke the floor", 5, 100));
@@ -38,18 +38,10 @@ public class UpgradePanel extends JPanel implements ActionListener{
 		upgrades.add(new Upgrade("Mechanical Keyboard", "Legends say you can type so fast that you actually have time to finish your APUSH exam", 1000000, 5000000));
 		upgrades.add(new Upgrade("Hologram Display", "I sense a plot to destroy the Jedi...", 1000000, 10000000));
 	
-		//Add to the buttons arraylist
-		buttons.add(new JButton(upgrades.get(0).toString()));
-		buttons.add(new JButton(upgrades.get(1).toString()));
-		buttons.add(new JButton(upgrades.get(2).toString()));
-		buttons.add(new JButton(upgrades.get(3).toString()));
-		buttons.add(new JButton(upgrades.get(4).toString()));
-		buttons.add(new JButton(upgrades.get(5).toString()));
-		buttons.add(new JButton(upgrades.get(6).toString()));
-		buttons.add(new JButton(upgrades.get(7).toString()));
-		buttons.add(new JButton(upgrades.get(8).toString()));
-		buttons.add(new JButton(upgrades.get(9).toString()));
-		buttons.add(new JButton(upgrades.get(10).toString()));
+		//Add to the buttons to arraylist
+		for (int i = 0; i < 11; i++) {
+			buttons.add(new JButton(upgrades.get(i).toString()));
+		}
 		
 		for (int i = 0; i < buttons.size(); i++) {
 			buttons.get(i).addActionListener(this);
@@ -57,13 +49,9 @@ public class UpgradePanel extends JPanel implements ActionListener{
 		}
 	}
 	
-
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
 		int index = buttons.indexOf(e.getSource());
-		
 		if (brain.getTotal() >= upgrades.get(index).getCost()) {
 			buyUpgrade(index);
 			updateButtons(index);
@@ -85,20 +73,28 @@ public class UpgradePanel extends JPanel implements ActionListener{
 	}
 	
 	/**
-	 * 
+	 * Buys an upgrade, increasing its "owned" field by one, and subtracts the cost from the brainCellTotal
 	 * @param index - index indicating which upgade to buy; each upgrade is assigned an index in the arraylist
+	 * @post brain gets its brainCellTotal count decreased by the cost of the upgrade
 	 */
 	public void buyUpgrade(int index) {
 		brain.addTotal(-upgrades.get(index).getCost());
 		upgrades.get(index).buy();
 	}
 	
+	/**
+	 * Returns all upgrades that are in the UpgradePanel
+	 * @return upgrades - an ArrayList containing all upgrades
+	 */
 	public ArrayList<Upgrade> getUpgrades() {
 		return upgrades;
 	}
 	
+	/**
+	 * Updates the text of the button of the given index
+	 * @param index - index of the button to update
+	 */
 	private void updateButtons(int index) {
-
 		buttons.get(index).setText(upgrades.get(index).toString());
 	}
 

@@ -42,12 +42,10 @@ public class Window extends JFrame {
 	    coursePanel = new CoursePanel(brainCell);
 	    otherPanel = new OtherPanel(brainCell);
 	    	
-
-	    
 	    tabbedPane = new JTabbedPane();
 //	    tabbedPane.setTabPlacement(JTabbedPane.LEFT);
-	    tabbedPane.add("Upgrades", upgradePanel);
 	    tabbedPane.add("Courses", coursePanel);
+	    tabbedPane.add("Upgrades", upgradePanel);
 	    tabbedPane.add("Other", otherPanel);
 
 	    
@@ -81,21 +79,12 @@ public class Window extends JFrame {
 			    		}
 			    		
 				    	if (coursePanel.getCourses().get(i).getProgress() == 1) {
-			    		System.out.println("end");
-			    		coursePanel.getCourses().get(i).endProduction();
-			    		brainCell.addTotal(coursePanel.getCourses().get(i).getProduction());
-			    	}
+				    		System.out.println("end");
+				    		coursePanel.getCourses().get(i).endProduction();
+			    			brainCell.addTotal(coursePanel.getCourses().get(i).getProduction());
+				    	}
 			    	}
 		    	}
-
-//		    	if (coursePanel.getCourses().get(0).inProduction) {
-//		    		coursePanel.getCourses().get(0).run();
-//		    	}
-//		    	if (coursePanel.getCourses().get(0).getProgress() == 1) {
-//		    		System.out.println("end");
-//		    		coursePanel.getCourses().get(0).endProduction();
-//		    		brainCell.addTotal(coursePanel.getCourses().get(0).getProduction());
-//		    	}
 		    	
 		    	menu.repaint();
 		        repaint();

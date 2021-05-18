@@ -24,28 +24,52 @@ public class Upgrade {
 		owned = 0;
 	}
 	
+	/**
+	 * Buys an upgrade
+	 * @post Increases owned by 1, baseCost by an exponential formula, and the currentProduction is updated with the new owned value
+	 */
 	public void buy() {
 		currentCost = baseCost * Math.pow(1.15, owned);
 		owned++;
 		currentProduction = baseProduction * owned;
 	}
 	
+	/**
+	 * Returns the current production
+	 * @return currentProduction - production of the upgrade accounting for the amount owned
+	 */
 	public double getProduction() {
 		return currentProduction;
 	}
 	
+	/**
+	 * Returns the current cost of the upgrade
+	 * @return currentCost - cost of the upgrade
+	 */
 	public double getCost() {
 		return currentCost;
 	}
 	
+	/**
+	 * Sets a new value for the amount of the ugprade that is owned
+	 * @param owned - new value of owned
+	 */
 	public void setOwned(int owned) {
 		this.owned = owned;
 	}
 	
+	/**
+	 * Returns amount of upgrade that is currently owned
+	 * @return owned - an integer representing the amount of the upgrade that is currently owned
+	 */
 	public int getOwned() {
 		return owned;
 	}
 	
+	/**
+	 * String of the upgrade, used for the text on the button
+	 * @return - String of the text for the upgrade
+	 */
 	public String toString() {
 		return "<html>" + name + "<br>" + desc + "<br>Cost: " + (int)getCost() + "<br>Owned: " + getOwned();
 	}
