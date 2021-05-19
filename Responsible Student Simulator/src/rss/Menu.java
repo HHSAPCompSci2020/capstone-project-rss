@@ -40,12 +40,6 @@ public class Menu extends JPanel implements ActionListener {
 	  public void paintComponent(Graphics g)
 	  {
 	    super.paintComponent(g); 
-	    
-	    int width = super.getWidth();
-		int height = getHeight();
-		
-		double xRatio = width/800.0;
-		double yRatio = height/600.0;
 		
 	    rate = brain.getRate();
 	    total = brain.getTotal();
@@ -64,14 +58,7 @@ public class Menu extends JPanel implements ActionListener {
 		outlines(g);
 		
 		Graphics2D g2 = (Graphics2D)g;
-		g2.scale(xRatio, yRatio);
-		
-		if (stress > 50)
-			g2.drawImage(angrythonk, 0, 50, (int)(300 * xRatio), (int)(600 * yRatio), this);
-		else if (sleep < 50)
-			g2.drawImage(bonkthonk, 0, 50, (int)(300 * xRatio), (int)(600 * yRatio), this);
-		else
-			g2.drawImage(thonk, 0, 50, (int)(300 * xRatio), (int)(600 * yRatio), this);
+		studentImages(g2);
 	  }
 	
 	public void repaint() {
@@ -103,9 +90,9 @@ public class Menu extends JPanel implements ActionListener {
 	    	g.setColor(Color.GREEN);
 		    g.fillRect(xTopLeft, yTopLeft+40, (int)(running.getProgress() * 100), 10);
 		    g.setColor(Color.BLACK);
-		    g.drawString("Course running: " + running.getName(), xTopLeft + 105, yTopLeft + 50);
+		    g.drawString("Course: " + running.getName(), xTopLeft + 105, yTopLeft + 50);
 	    } else {
-	    	g.drawString("Course running: none", xTopLeft + 105, yTopLeft + 50);
+	    	g.drawString("Course: none", xTopLeft + 105, yTopLeft + 50);
 	    }
 	    
 	    g.setColor(Color.BLACK);
@@ -118,6 +105,23 @@ public class Menu extends JPanel implements ActionListener {
 		g.drawRect(0, 250, 300, 100);
 	}
 	
+	private void studentImages(Graphics2D g2) {
+	    int width = super.getWidth();
+		int height = getHeight();
+		
+		double xRatio = width/800.0;
+		double yRatio = height/600.0;
+		
+		g2.scale(xRatio, yRatio);
+		
+		if (stress > 50)
+			g2.drawImage(angrythonk, 0, 50, (int)(300 * xRatio), (int)(600 * yRatio), this);
+		else if (sleep < 50)
+			g2.drawImage(bonkthonk, 0, 50, (int)(300 * xRatio), (int)(600 * yRatio), this);
+		else
+			g2.drawImage(thonk, 0, 50, (int)(300 * xRatio), (int)(600 * yRatio), this);
+		
+	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
