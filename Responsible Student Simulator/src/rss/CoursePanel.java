@@ -39,9 +39,7 @@ public class CoursePanel extends JPanel implements ActionListener {
 		scienceButton = new JButton(science.toString());
 		englishButton = new JButton(english.toString());
 		historyButton = new JButton(history.toString());
-//		mathButton.setText(mathButton.getText() + (int)courses.get(0).getProduction());
-//		mathButton.setText(mathButton.getText() + "<br>Unlocked: ");
-//		mathButton.setText(mathButton.getText() + courses.get(0).getUnlocked());
+
 		buttons.add(mathButton);
 		buttons.add(scienceButton);
 		buttons.add(englishButton);
@@ -66,13 +64,13 @@ public class CoursePanel extends JPanel implements ActionListener {
 		courses.get(index);
 		//System.out.println("index: " + index);
 		if (Course.inProduction) {
-			System.out.println("still in production");
+//			System.out.println("still in production");
 			return;
 		} else if (courses.get(index).getUnlocked() && courses.get(index).getProgress() == 0) { // If course is unlocked and nothing is in production
-				System.out.println("start");
+//				System.out.println("start");
 			courses.get(index).startProduction();
 		} else if (!courses.get(index).getUnlocked()) { // If unlocked, try to buy
-				System.out.println("attempt to buy");
+//				System.out.println("attempt to buy");
 			courses.get(index).buy(brainCell.getTotal());
 			if (courses.get(index).getUnlocked()) {
 				brainCell.addTotal(-courses.get(index).getCost());
@@ -85,6 +83,10 @@ public class CoursePanel extends JPanel implements ActionListener {
 		return courses;
 	}
 	
+	/**
+	 * Returns the course that is running, if null then no courses are running
+	 * @return Course that is running
+	 */
 	public Course getRunningCourse() {
 		
 		if (Course.inProduction) {

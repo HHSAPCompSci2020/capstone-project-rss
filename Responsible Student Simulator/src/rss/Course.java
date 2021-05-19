@@ -97,6 +97,10 @@ public class Course {
 		return unlocked;
 	}
 	
+	public String getName() {
+		return name;
+	}
+	
 	public String toString() {
 		String s = "<html>" + name + "<br>" + desc + "<br>Production: " + (int)getProduction();
 		

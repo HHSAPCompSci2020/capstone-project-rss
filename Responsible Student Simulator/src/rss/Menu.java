@@ -94,11 +94,22 @@ public class Menu extends JPanel implements ActionListener {
 	    g.drawString("Sleep: " + (int)sleep, xTopLeft + 105, yTopLeft + 10);
 	    g.drawString("Stress: " + (int)stress, xTopLeft + 105, yTopLeft + 30);
 
-//	    //Course progress bar
-//	    g.setColor(Color.GREEN);
-//	    g.fillRect(400, yTopLeft, (int)coursePanel.getRunningCourse().getProgress() * 100, 10);
-//	    g.setColor(Color.BLACK);
-//	    g.drawRect(400, yTopLeft, 100, 10);
+	    //Course progress bar
+	    Course running = coursePanel.getRunningCourse();
+//	    System.out.println(running);
+	    
+	    if (running != null) {
+//	    	System.out.println("drawing");
+	    	g.setColor(Color.GREEN);
+		    g.fillRect(xTopLeft, yTopLeft+40, (int)(running.getProgress() * 100), 10);
+		    g.setColor(Color.BLACK);
+		    g.drawString("Course running: " + running.getName(), xTopLeft + 105, yTopLeft + 50);
+	    } else {
+	    	g.drawString("Course running: none", xTopLeft + 105, yTopLeft + 50);
+	    }
+	    
+	    g.setColor(Color.BLACK);
+	    g.drawRect(xTopLeft, yTopLeft+40, 100, 10);
 	}
 	
 	private void outlines(Graphics g) {
