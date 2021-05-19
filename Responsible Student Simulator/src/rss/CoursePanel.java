@@ -66,6 +66,7 @@ public class CoursePanel extends JPanel implements ActionListener {
 		courses.get(index);
 		//System.out.println("index: " + index);
 		if (Course.inProduction) {
+			System.out.println("still in production");
 			return;
 		} else if (courses.get(index).getUnlocked() && courses.get(index).getProgress() == 0) { // If course is unlocked and nothing is in production
 				System.out.println("start");
@@ -82,6 +83,18 @@ public class CoursePanel extends JPanel implements ActionListener {
 
 	public ArrayList<Course> getCourses() {
 		return courses;
+	}
+	
+	public Course getRunningCourse() {
+		
+		if (Course.inProduction) {
+			for (int i = 0; i < courses.size(); i++) {
+				if (courses.get(i).getRunning()) {
+					return courses.get(i);
+				}
+			}
+		}
+		return null;
 	}
 
 }

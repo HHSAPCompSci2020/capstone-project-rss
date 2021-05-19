@@ -37,10 +37,10 @@ public class Window extends JFrame {
 	    
 	    brainCell = new BrainCell();
 	    startMenu = new StartMenu(this);    
-	    menu = new Menu(this, brainCell);
 	    upgradePanel = new UpgradePanel(brainCell);
 	    coursePanel = new CoursePanel(brainCell);
 	    otherPanel = new OtherPanel(brainCell);
+	    menu = new Menu(this, brainCell, coursePanel);
 	    	
 	    tabbedPane = new JTabbedPane();
 //	    tabbedPane.setTabPlacement(JTabbedPane.LEFT);
@@ -82,6 +82,7 @@ public class Window extends JFrame {
 				    		System.out.println("end");
 				    		brainCell.addStress((i+1) * 10);
 				    		System.out.println(brainCell.getStress());
+				    		coursePanel.getCourses().get(i).endProduction();
 			    			brainCell.addTotal(coursePanel.getCourses().get(i).getProduction());
 				    	}
 			    	}
