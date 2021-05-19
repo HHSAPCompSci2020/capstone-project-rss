@@ -43,8 +43,8 @@ public class Menu extends JPanel implements ActionListener {
 		
 	    rate = brain.getRate();
 	    total = brain.getTotal();
-	    sleep = brain.getSleep();
-	    stress = brain.getStress();
+	    sleep = 20;
+	    stress = 80;
 
 	    g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 15));
 	    
@@ -56,6 +56,7 @@ public class Menu extends JPanel implements ActionListener {
 
 		bars(g);
 		outlines(g);
+		warnings(g);
 		
 		Graphics2D g2 = (Graphics2D)g;
 		studentImages(g2);
@@ -120,6 +121,17 @@ public class Menu extends JPanel implements ActionListener {
 			g2.drawImage(bonkthonk, 0, 50, (int)(300 * xRatio), (int)(600 * yRatio), this);
 		else
 			g2.drawImage(thonk, 0, 50, (int)(300 * xRatio), (int)(600 * yRatio), this);
+		
+	}
+	
+	private void warnings(Graphics g) {
+		g.setColor(Color.RED);
+		if (sleep < 30) {
+			g.drawString("Brain cell rate is decreased because of low sleep!", 350, 60);
+		} 
+		if(stress > 70) {
+			g.drawString("Brain cell rate is decreased because of high stress!", 350, 80);
+		}
 		
 	}
 	@Override
