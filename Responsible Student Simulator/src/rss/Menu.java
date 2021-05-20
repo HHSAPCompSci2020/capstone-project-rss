@@ -43,8 +43,8 @@ public class Menu extends JPanel implements ActionListener {
 		
 	    rate = brain.getRate();
 	    total = brain.getTotal();
-	    sleep = 20;
-	    stress = 80;
+	    sleep = brain.getSleep();
+	    stress = brain.getStress();
 
 	    g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 15));
 	    
@@ -71,8 +71,21 @@ public class Menu extends JPanel implements ActionListener {
 		int yTopLeft = 280;
 		
 		//Green bar that dwindles down
-	    g.setColor(Color.GREEN);
+		if (sleep < 10) {
+			g.setColor(Color.RED);
+		} else if (sleep < 30) {
+			g.setColor(Color.YELLOW);
+		} else {
+		    g.setColor(Color.GREEN);
+		}
 	    g.fillRect(xTopLeft, yTopLeft, (int)sleep, 10);
+		if (stress > 90) {
+			g.setColor(Color.RED);
+		} else if (stress > 70) {
+			g.setColor(Color.YELLOW);
+		} else {
+		    g.setColor(Color.GREEN);
+		}
 	    g.fillRect(xTopLeft, yTopLeft+20, (int)stress, 10);
 	    
 	    //Outlines for the sleep and stress bars

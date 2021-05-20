@@ -42,7 +42,6 @@ public class OtherPanel extends JPanel implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource().equals(prestige) && brain.getTotal() >= brain.prestige.getCost()) {
 			prestiged = true;
-			updateButtons();
 			repaint();
 		} else if (e.getSource().equals(sleep)) {
 			brain.sleep();

@@ -83,7 +83,7 @@ public class Window extends JFrame {
 				    		brainCell.addStress((i+1) * 10);
 				    		System.out.println(brainCell.getStress());
 				    		coursePanel.getCourses().get(i).endProduction();
-			    			brainCell.addTotal(coursePanel.getCourses().get(i).getProduction());
+			    			brainCell.addTotal(coursePanel.getCourses().get(i).getProduction() * Math.pow(2,brainCell.prestige.getOwned()));
 				    	}
 			    	}
 		    	}
@@ -122,6 +122,7 @@ public class Window extends JFrame {
 			upgradePanel.updateButtons(i);
 		}
 		upgradePanel.calculateRate();
+		otherPanel.updateButtons();
 		
 	}
 }

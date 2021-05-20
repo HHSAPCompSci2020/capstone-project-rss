@@ -15,9 +15,9 @@ public class Sleep {
 		maxSleep = 100;
 	}
 	
-	public void act() {
+	public void act(int x) {
 		if (currentSleep > 0) {
-			currentSleep--;
+			currentSleep -= x;
 		}
 	}
 	

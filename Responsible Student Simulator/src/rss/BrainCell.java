@@ -16,7 +16,7 @@ public class BrainCell {
 	
 	public BrainCell() {
 		brainCellRate = 0;
-		totalBrainCells = (double)1100000000;
+		totalBrainCells = 0;
 		sleep = new Sleep();
 		stress = new Stress();
 		prestige = new Prestige("Prestige", "Reset ALL currnet progress to gain a permanent production modifier bonus.", 1000000000);
@@ -66,7 +66,7 @@ public class BrainCell {
 	}
 	
 	public void addStress(double amount) {
-		stress.addStress(amount);
+		stress.addStress(amount * (prestige.getOwned() + 1));
 	}
 	
 	public double getStress() {
@@ -81,7 +81,7 @@ public class BrainCell {
 	 * Causes the amount of sleep and stress to decrease; call every second
 	 */
 	public void act() {
-		sleep.act();
+		sleep.act(prestige.getOwned()+1);
 		stress.act();
 	}
 	
