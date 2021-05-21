@@ -63,6 +63,7 @@ public class OtherPanel extends JPanel implements ActionListener{
 			if (brain.getTotal() >= events.get(index).getCost()) {
 				brain.addTotal(-events.get(index).getCost());
 				brain.addStress(-events.get(index).getValue());
+				brain.addHappiness(events.get(index).getValue());
 				updateButtons(index);
 				repaint();
 			}

@@ -23,7 +23,7 @@ public class Menu extends JPanel implements ActionListener {
 
 	Window window;
 	BrainCell brain;
-	double rate, total, stress, sleep;
+	double rate, total, stress, sleep, happiness;
 	Graphics g;
 	Image angrythonk, thonk, bonkthonk;
 	CoursePanel coursePanel;
@@ -45,6 +45,7 @@ public class Menu extends JPanel implements ActionListener {
 	    total = brain.getTotal();
 	    sleep = brain.getSleep();
 	    stress = brain.getStress();
+	    happiness = brain.getHappiness();
 
 	    g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 15));
 	    
@@ -94,7 +95,7 @@ public class Menu extends JPanel implements ActionListener {
 	    g.drawRect(xTopLeft, yTopLeft+20, 100, 10);
 	    g.drawString("Sleep: " + (int)sleep, xTopLeft + 105, yTopLeft + 10);
 	    g.drawString("Stress: " + (int)stress, xTopLeft + 105, yTopLeft + 30);
-
+	    g.drawString("Happiness: " + (int)happiness, xTopLeft + 405, yTopLeft + 30);
 	    //Course progress bar
 	    Course running = coursePanel.getRunningCourse();
 //	    System.out.println(running);
@@ -144,6 +145,9 @@ public class Menu extends JPanel implements ActionListener {
 		} 
 		if(stress > 70) {
 			g.drawString("Brain cell rate is decreased because of high stress!", 350, 80);
+		}
+		if (happiness < 30) {
+			g.drawString("Brain cell rate is decreased because of unhappiness!", 350, 100);
 		}
 		
 	}
