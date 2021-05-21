@@ -16,7 +16,7 @@ public class BrainCell {
 	
 	public BrainCell() {
 		brainCellRate = 0;
-		totalBrainCells = 0;
+		totalBrainCells = 10000000;
 		sleep = new Sleep();
 		stress = new Stress();
 		prestige = new Prestige("Prestige", "Reset ALL currnet progress to gain a permanent production modifier bonus.", 1000000000);

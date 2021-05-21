@@ -20,7 +20,6 @@ public class UpgradePanel extends JPanel implements ActionListener{
 
 	private ArrayList<Upgrade> upgrades = new ArrayList<Upgrade>();
 	private ArrayList<JButton> buttons = new ArrayList<JButton>();
-	private JButton flipPhone, nokiaPhone, smartPhone, miniTablet, tablet, laptop, pc, monitor, laserMouse, mechanicalKeybaord, hologramDisplay;
 	private BrainCell brain;
 	
 	public UpgradePanel(BrainCell brain) {

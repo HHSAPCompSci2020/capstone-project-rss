@@ -122,7 +122,7 @@ public class Window extends JFrame {
 			upgradePanel.updateButtons(i);
 		}
 		upgradePanel.calculateRate();
-		otherPanel.updateButtons();
+		otherPanel.updateButtons(-1);
 		
 	}
 }
