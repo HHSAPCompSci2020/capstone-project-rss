@@ -7,6 +7,7 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -27,11 +28,13 @@ public class Menu extends JPanel implements ActionListener {
 	Graphics g;
 	Image angrythonk, thonk, bonkthonk;
 	CoursePanel coursePanel;
+	UpgradePanel upgradePanel;
 	
-	public Menu (Window window, BrainCell brain, CoursePanel coursePanel) {
+	public Menu (Window window, BrainCell brain, CoursePanel coursePanel, UpgradePanel upgradePanel) {
 		this.window = window;
 		this.brain = brain;
 		this.coursePanel = coursePanel;
+		this.upgradePanel = upgradePanel;
 		angrythonk = new ImageIcon("angry_thonk.png").getImage();
 		thonk = new ImageIcon("thonk.png").getImage();
 		bonkthonk = new ImageIcon("bonkthonk.png").getImage();
@@ -41,6 +44,12 @@ public class Menu extends JPanel implements ActionListener {
 	  {
 	    super.paintComponent(g); 
 		
+	    int width = super.getWidth();
+		int height = getHeight();
+		
+		double xRatio = width/800.0;
+		double yRatio = height/600.0;
+	    
 	    rate = brain.getRate();
 	    total = brain.getTotal();
 	    sleep = brain.getSleep();
@@ -60,7 +69,8 @@ public class Menu extends JPanel implements ActionListener {
 		warnings(g);
 		
 		Graphics2D g2 = (Graphics2D)g;
-		studentImages(g2);
+		studentImages(g2, xRatio, yRatio);
+		deskImages(g2, xRatio, yRatio);
 	  }
 	
 	public void repaint() {
@@ -120,12 +130,8 @@ public class Menu extends JPanel implements ActionListener {
 		g.drawRect(0, 250, 300, 100);
 	}
 	
-	private void studentImages(Graphics2D g2) {
-	    int width = super.getWidth();
-		int height = getHeight();
-		
-		double xRatio = width/800.0;
-		double yRatio = height/600.0;
+	private void studentImages(Graphics2D g2, double xRatio, double yRatio) {
+
 		
 		g2.scale(xRatio, yRatio);
 		
@@ -136,6 +142,29 @@ public class Menu extends JPanel implements ActionListener {
 		else
 			g2.drawImage(thonk, 0, 50, (int)(300 * xRatio), (int)(600 * yRatio), this);
 		
+	}
+	
+	private void deskImages(Graphics2D g2, double xRatio, double yRatio) {
+		
+		ArrayList<Image> images = new ArrayList<Image>();
+		images.add(new ImageIcon("flipPhone.png").getImage());
+		images.add(new ImageIcon("nokia.png").getImage());
+		images.add(new ImageIcon("smartphone.png").getImage());
+		images.add(new ImageIcon("minitablet.png").getImage());
+		images.add(new ImageIcon("tablet.png").getImage());
+		
+		ArrayList<Upgrade> upgrades = upgradePanel.getUpgrades();
+		
+		g2.drawImage(new ImageIcon("desk.png").getImage(), 313, 100, (int)(500 * xRatio), (int)(800 * yRatio), this);
+		
+		int phone = 5; //Number of phone upgrades
+		for (int i = phone -1; i >= 0; i--) {
+			if (upgrades.get(i).getOwned() > 0) {
+				g2.drawImage(images.get(i), 450, 355, (int)(75 * xRatio), (int)(150 * yRatio), this);
+				i = -1;
+			}
+		}
+				
 	}
 	
 	private void warnings(Graphics g) {

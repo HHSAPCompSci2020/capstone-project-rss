@@ -40,7 +40,7 @@ public class Window extends JFrame {
 	    upgradePanel = new UpgradePanel(brainCell);
 	    coursePanel = new CoursePanel(brainCell);
 	    otherPanel = new OtherPanel(brainCell);
-	    menu = new Menu(this, brainCell, coursePanel);
+	    menu = new Menu(this, brainCell, coursePanel, upgradePanel);
 	    	
 	    tabbedPane = new JTabbedPane();
 //	    tabbedPane.setTabPlacement(JTabbedPane.LEFT);
