@@ -79,9 +79,9 @@ public class Menu extends JPanel implements ActionListener {
 	
 	private void bars(Graphics g) {
 		int xTopLeft = 5;
-		int yTopLeft = 280;
-		
-		//Green bar that dwindles down
+		int yTopLeft = 265;
+	
+		//Bars that dwindles down and changes color
 		if (sleep < 10) {
 			g.setColor(Color.RED);
 		} else if (sleep < 30) {
@@ -90,6 +90,7 @@ public class Menu extends JPanel implements ActionListener {
 		    g.setColor(Color.GREEN);
 		}
 	    g.fillRect(xTopLeft, yTopLeft, (int)sleep, 10);
+	    
 		if (stress > 90) {
 			g.setColor(Color.RED);
 		} else if (stress > 70) {
@@ -99,13 +100,22 @@ public class Menu extends JPanel implements ActionListener {
 		}
 	    g.fillRect(xTopLeft, yTopLeft+20, (int)stress, 10);
 	    
+	    if (happiness < 10)
+	    	g.setColor(Color.RED);
+	    else if (happiness < 30) 
+	    	g.setColor(Color.YELLOW);
+	    else 
+	    	g.setColor(Color.GREEN);
+	    g.fillRect(xTopLeft, yTopLeft+60, (int)happiness, 10);
+
 	    //Outlines for the sleep and stress bars
 	    g.setColor(Color.BLACK);
 	    g.drawRect(xTopLeft, yTopLeft, 100, 10);
 	    g.drawRect(xTopLeft, yTopLeft+20, 100, 10);
+	    g.drawRect(xTopLeft, yTopLeft+60, 100, 10);
 	    g.drawString("Sleep: " + (int)sleep, xTopLeft + 105, yTopLeft + 10);
 	    g.drawString("Stress: " + (int)stress, xTopLeft + 105, yTopLeft + 30);
-	    g.drawString("Happiness: " + (int)happiness, xTopLeft + 405, yTopLeft + 30);
+	    g.drawString("Happiness: " + (int)happiness, xTopLeft + 105, yTopLeft + 70);
 	    //Course progress bar
 	    Course running = coursePanel.getRunningCourse();
 //	    System.out.println(running);
