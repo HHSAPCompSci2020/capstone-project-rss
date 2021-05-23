@@ -19,6 +19,10 @@ public class UpgradePanel extends JPanel implements ActionListener{
 	private ArrayList<JButton> buttons = new ArrayList<JButton>();
 	private BrainCell brain;
 	
+	/**
+	 * Constructs an UpgradePanel with a given BrainCell
+	 * @param brain - the BrainCell used to calculate total brain cells and brain cell rate
+	 */
 	public UpgradePanel(BrainCell brain) {
 		setLayout(new GridLayout(3, 4));
 		this.brain = brain;
@@ -45,6 +49,9 @@ public class UpgradePanel extends JPanel implements ActionListener{
 		}
 	}
 	
+	/**
+	 * Checks for a button being pressed
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		int index = buttons.indexOf(e.getSource());

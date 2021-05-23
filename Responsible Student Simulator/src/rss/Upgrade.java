@@ -14,6 +14,13 @@ public class Upgrade {
 	private int owned;
 	private String name, desc;
 	
+	/**
+	 * Creates an Upgrade with given parameters which will be displayed on the button
+	 * @param name - the name of the upgrade
+	 * @param desc - the description of the upgrade
+	 * @param baseProduction - initial production rate of the upgrade
+	 * @param baseCost - initial cost of the upgrade
+	 */
 	public Upgrade(String name, String desc, double baseProduction, double baseCost) {
 		this.baseCost = baseCost;
 		this.baseProduction = baseProduction;

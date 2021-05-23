@@ -19,15 +19,19 @@ public class OtherPanel extends JPanel implements ActionListener{
 	private JButton prestige, sleep;
 	protected boolean prestiged;
 	
+	/**
+	 * Constructs a panel containing prestige, sleep, and stress buttons, with a given BrainCell
+	 * @param brain - the BrainCell used to gather total brain cell counts and the brain cell rate
+	 */
 	public OtherPanel(BrainCell brain) {
 		setLayout(new GridLayout(3, 3));
 		this.brain = brain;
 		
 		events.add(new StressEvent("Watch Youtube Videos", "I'm sure this is a productive use of your time", 1000, 5, 2));
-		events.add(new StressEvent("Play A Game", "Maybe one about managing student stress?", 5000, 10, 5));
-		events.add(new StressEvent("Eat Dinner", "Don't Starve", 50000, 25, 10));
-		events.add(new StressEvent("Talk to Friends", "Meet with actual people in real life", 250000, 50, 40));
-		events.add(new StressEvent("Go to the Movies", "I've heard stories about the jedi...", 1000000, 100, 100));
+		events.add(new StressEvent("Play A Game", "Maybe one about managing student stress?", 2000, 10, 5));
+		events.add(new StressEvent("Eat Dinner", "Don't Starve", 5000, 25, 10));
+		events.add(new StressEvent("Talk to Friends", "Meet with actual people in real life", 50000, 50, 40));
+		events.add(new StressEvent("Go to the Movies", "I've heard stories about the jedi...", 250000, 100, 100));
 		
 		for (int i = 0; i < 5; i++) {
 			buttons.add(new JButton(events.get(i).toString()));
@@ -46,6 +50,9 @@ public class OtherPanel extends JPanel implements ActionListener{
 		prestiged = false;
 	}
 	
+	/**
+	 * Checks for buttons being pressed
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource().equals(prestige) && brain.getTotal() >= brain.prestige.getCost()) {
@@ -67,6 +74,10 @@ public class OtherPanel extends JPanel implements ActionListener{
 		}
 	}
 	
+	/**
+	 * Updates the text of a button with a given index; if the index is -1, the prestige button will update, instead of any stress event buttons
+	 * @param index - the index of the button in the ArrayList of buttons
+	 */
 	public void updateButtons(int index) {
 		if (index == -1) {
 			prestige.setText(brain.prestige.toString());
