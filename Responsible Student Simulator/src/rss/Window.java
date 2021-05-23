@@ -81,7 +81,7 @@ public class Window extends JFrame {
 				    	if (coursePanel.getCourses().get(i).getProgress() == 1) {
 				    		System.out.println("end");
 				    		brainCell.addStress((i+1) * 10);
-				    		brainCell.addHappiness(-(i+1) * 10);
+				    		brainCell.addHappiness(-(i+1) * 5);
 				    		System.out.println(brainCell.getStress());
 				    		coursePanel.getCourses().get(i).endProduction();
 			    			brainCell.addTotal(coursePanel.getCourses().get(i).getProduction() * Math.pow(2,brainCell.prestige.getOwned()));

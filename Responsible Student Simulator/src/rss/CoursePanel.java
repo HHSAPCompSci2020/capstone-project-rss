@@ -27,9 +27,9 @@ public class CoursePanel extends JPanel implements ActionListener {
 		this.brainCell = brainCell;
 
 		math = new Course("Algebra", "maffs?", 100, 0, 5);
-		science = new Course("Biology", "cells studying themselves", 500, 1000, 7);
-		english = new Course("American Literature", "genocide", 1500, 5000, 10);
-		history = new Course("World History", "zzzzz", 5000, 20000, 18);
+		science = new Course("Biology", "cells studying themselves", 10000, 1000, 7);
+		english = new Course("American Literature", "genocide", 50000, 5000, 10);
+		history = new Course("World History", "zzzzz", 100000, 20000, 18);
 		courses.add(math);
 		courses.add(science);
 		courses.add(english);

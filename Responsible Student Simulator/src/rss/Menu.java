@@ -71,6 +71,7 @@ public class Menu extends JPanel implements ActionListener {
 		Graphics2D g2 = (Graphics2D)g;
 		studentImages(g2, xRatio, yRatio);
 		deskImages(g2, xRatio, yRatio);
+
 	  }
 	
 	public void repaint() {

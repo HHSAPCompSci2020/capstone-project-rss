@@ -10,12 +10,6 @@ public class Happiness {
 		maxHappiness = 100;
 	}
 	
-	public void act() {
-		if (currentHappiness >= 0.2) {
-			currentHappiness -= 0.2;
-		}
-	}
-	
 	public double getHappiness() {
 		return currentHappiness;
 	}

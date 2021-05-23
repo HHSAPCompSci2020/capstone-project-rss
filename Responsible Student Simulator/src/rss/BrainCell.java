@@ -105,7 +105,6 @@ public class BrainCell {
 	public void act() {
 		sleep.act(prestige.getOwned()+1);
 		stress.act();
-		happiness.act();
 	}
 	
 }
