@@ -1,5 +1,7 @@
 package rss;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -45,6 +47,13 @@ public class CoursePanel extends JPanel implements ActionListener {
 		buttons.add(englishButton);
 		buttons.add(historyButton);
 
+		for (int i = 0; i < buttons.size(); i++) {
+	        buttons.get(i).setBackground(new Color(95, 107, 125));
+	        buttons.get(i).setForeground(Color.WHITE);
+	        buttons.get(i).setFocusPainted(false);
+	        buttons.get(i).setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
+		}
+		
 		mathButton.addActionListener(this);
 		scienceButton.addActionListener(this);
 		englishButton.addActionListener(this);

@@ -58,6 +58,6 @@ public class Prestige {
 	 * @return - String of the text for the upgrade
 	 */
 	public String toString() {
-		return "<html>" + name + "<br>" + desc + "<br>Cost: " + (int)getCost() + "<br>Prestige Level: " + getOwned();
+		return "<html><i>-" + name + "-<i><br>" + desc + "<br>Cost: " + (int)getCost() + "<br>Prestige Level: " + getOwned();
 	}
 }

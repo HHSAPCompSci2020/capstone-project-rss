@@ -4,6 +4,9 @@ import java.awt.event.ActionListener;
 import java.util.*;
 import javax.swing.JPanel;
 import javax.swing.JButton;
+
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridLayout;
 
 /**
@@ -39,10 +42,24 @@ public class OtherPanel extends JPanel implements ActionListener{
 		for (int i = 0; i < buttons.size(); i++) {
 			buttons.get(i).addActionListener(this);
 			this.add(buttons.get(i));
+	        buttons.get(i).setBackground(new Color(95, 107, 125));
+	        buttons.get(i).setForeground(Color.WHITE);
+	        buttons.get(i).setFocusPainted(false);
+	        buttons.get(i).setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
 		}
 		
 		prestige = new JButton(brain.prestige.toString());
-		sleep = new JButton("<html>Sleep<br>Go to sleep! Replenishes sleep back to 100.");
+		sleep = new JButton("<html><i>-Sleep-</i><br>Go to sleep! Replenishes sleep back to 100.");
+		
+        prestige.setBackground(new Color(95, 107, 125));
+        prestige.setForeground(Color.WHITE);
+        prestige.setFocusPainted(false);
+        prestige.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
+        sleep.setBackground(new Color(95, 107, 125));
+        sleep.setForeground(Color.WHITE);
+        sleep.setFocusPainted(false);
+        sleep.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
+		
 		sleep.addActionListener(this);
 		prestige.addActionListener(this);
 		this.add(prestige);

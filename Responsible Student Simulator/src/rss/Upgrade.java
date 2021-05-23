@@ -79,6 +79,6 @@ public class Upgrade {
 	 * @return - String of the text for the upgrade
 	 */
 	public String toString() {
-		return "<html>" + name + "<br>" + desc + "<br>Cost: " + (int)getCost() + "<br>Owned: " + getOwned();
+		return "<html><i>-" + name + "-</i><br>" + desc + "<br>Cost: " + (int)getCost() + "<br>Owned: " + getOwned() + "<br>Production: " + (int)getProduction();
 	}
 }

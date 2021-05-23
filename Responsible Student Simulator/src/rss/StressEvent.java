@@ -57,7 +57,7 @@ public class StressEvent {
 	 * @return - String with name, desc, cost, value, and happiness on separated lines
 	 */
 	public String toString() {
-		return "<html>" + name + "<br>" + desc + "<br>Cost: " + (int)getCost() + "<br>Decreases Stress by: " + (int)getValue() + "<br> Increases Hapiness By: " + (int)getHappiness();
+		return "<html><i>-" + name + "-</i><br>" + desc + "<br>Cost: " + (int)getCost() + "<br>Decreases Stress by: " + (int)getValue() + "<br> Increases Hapiness By: " + (int)getHappiness();
 	}
 	
 	

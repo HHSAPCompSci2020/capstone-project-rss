@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
 import javax.swing.JPanel;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 
@@ -34,18 +36,23 @@ public class UpgradePanel extends JPanel implements ActionListener{
 		upgrades.add(new Upgrade("Laptop", "No more pocket edition minecraft", 500, 50000));
 		upgrades.add(new Upgrade("PC", "Now you need a camera for Zoom", 1000, 100000));
 		upgrades.add(new Upgrade("Ultrawide Monitor", "It's for school mom I swear", 5000, 500000));
-		upgrades.add(new Upgrade("Laser Mouse", "Because sometimes you need to hit that kahoot answer with *precision*", 10000, 1000000));
-		upgrades.add(new Upgrade("Mechanical Keyboard", "Legends say you can type so fast that you actually have time to finish your APUSH exam", 1000000, 5000000));
-		upgrades.add(new Upgrade("Hologram Display", "I sense a plot to destroy the Jedi...", 1000000, 10000000));
+		upgrades.add(new Upgrade("Desktop Upgrades", "The rgb ram and liquid cooling makes me faster at solving math problems", 10000, 1000000));
+		upgrades.add(new Upgrade("Laser Mouse", "Because sometimes you need to hit that kahoot answer with *precision*", 25000, 5000000));
+		upgrades.add(new Upgrade("Mechanical Keyboard", "Legends say you can type so fast that you can finish your essay on time", 50000, 10000000));
+		upgrades.add(new Upgrade("Hologram Display", "I sense a plot to destroy the Jedi...", 100000, 50000000));
 	
 		//Add to the buttons to arraylist
-		for (int i = 0; i < 11; i++) {
+		for (int i = 0; i < 12; i++) {
 			buttons.add(new JButton(upgrades.get(i).toString()));
 		}
 		
 		for (int i = 0; i < buttons.size(); i++) {
 			buttons.get(i).addActionListener(this);
 			this.add(buttons.get(i));
+	        buttons.get(i).setBackground(new Color(95, 107, 125));
+	        buttons.get(i).setForeground(Color.WHITE);
+	        buttons.get(i).setFocusPainted(false);
+	        buttons.get(i).setFont(new Font(Font.SANS_SERIF, Font.BOLD, 13));
 		}
 	}
 	

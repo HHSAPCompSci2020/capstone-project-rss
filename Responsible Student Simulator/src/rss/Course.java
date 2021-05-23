@@ -102,7 +102,7 @@ public class Course {
 	}
 	
 	public String toString() {
-		String s = "<html>" + name + "<br>" + desc + "<br>Production: " + (int)getProduction();
+		String s = "<html><i>-" + name + "-</i><br>" + desc + "<br>Production: " + (int)getProduction();
 		
 		if (unlocked) {
 			s += "<br>Unlocked: True";
