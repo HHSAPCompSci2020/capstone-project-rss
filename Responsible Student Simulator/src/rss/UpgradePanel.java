@@ -1,12 +1,9 @@
 package rss;
-import java.awt.Button;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
-import javax.swing.BoxLayout;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 
