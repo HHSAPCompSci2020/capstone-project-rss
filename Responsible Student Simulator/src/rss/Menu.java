@@ -46,7 +46,7 @@ public class Menu extends JPanel implements ActionListener {
 	}
 
 	/**
-	 * Paints the Menu with udpated values
+	 * Paints the Menu with updated values
 	 */
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
