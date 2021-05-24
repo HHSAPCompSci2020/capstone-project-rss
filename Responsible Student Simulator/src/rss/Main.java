@@ -1,7 +1,11 @@
 package rss;
 
 public class Main {
+	/**
+	 * Starts the main Window for the program
+	 * @param args
+	 */
 	public static void main(String[] args) {
-		Window w = new Window("Responsible Student Simulator");
+		Window w = new Window();
 	}
 }

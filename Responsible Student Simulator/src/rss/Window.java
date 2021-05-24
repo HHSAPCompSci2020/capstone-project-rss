@@ -9,6 +9,11 @@ import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Draws the Window with all panels and the BrainCell class
+ * @author Megan Choy and Jeremie Park
+ *
+ */
 public class Window extends JFrame {
 	
 	private JPanel cardPanel;
@@ -21,9 +26,12 @@ public class Window extends JFrame {
 	private OtherPanel otherPanel;
 	private BrainCell brainCell;
 	private Timer timer;
-		
-	public Window(String title) {
-		super(title);
+	
+	/**
+	 * Creates a Responsible Student Simulator window
+	 */
+	public Window() {
+		super("Responsible Student Simulator");
 		setBounds(500, 50, 800, 1000);
 	    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    
@@ -106,12 +114,20 @@ public class Window extends JFrame {
 		brainCell.addTotal(brainCell.getRate());
 	}
 	
+	/**
+	 * Resets brain cell total and rate, upgrades
+	 */
 	public void prestige() {
 		brainCell.prestige.prestige();
 		brainCell.setTotal(0);
 		for (int i = 0; i < upgradePanel.getUpgrades().size(); i++) {
 			upgradePanel.getUpgrades().get(i).setOwned(0);
 			upgradePanel.updateButtons(i);
+		}
+		
+		for (int i = 0; i < coursePanel.getCourses().size(); i++) {
+			coursePanel.getCourses().get(i).setUnlocked(false);
+			coursePanel.updateButtons(i);
 		}
 		upgradePanel.calculateRate();
 		otherPanel.updateButtons(-1);

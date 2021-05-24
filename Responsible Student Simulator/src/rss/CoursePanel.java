@@ -66,6 +66,9 @@ public class CoursePanel extends JPanel implements ActionListener {
 
 	}
 
+	/**
+	 * Checks for a button being pressed
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
@@ -88,6 +91,10 @@ public class CoursePanel extends JPanel implements ActionListener {
 		} 
 	}
 
+	/**
+	 * Returns the ArrayList of Courses used in this panel
+	 * @return ArrayList of Courses used in the panel
+	 */
 	public ArrayList<Course> getCourses() {
 		return courses;
 	}
@@ -108,4 +115,11 @@ public class CoursePanel extends JPanel implements ActionListener {
 		return null;
 	}
 
+	/**
+	 * Updates the text of the button of the given index
+	 * @param index - index of the button to update
+	 */
+	public void updateButtons(int index) {
+		buttons.get(index).setText(courses.get(index).toString());
+	}
 }
