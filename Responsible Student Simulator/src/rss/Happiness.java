@@ -1,5 +1,10 @@
 package rss;
 
+/**
+ * Class that represents the happiness level of the student
+ * @author Jeremie Park
+ *
+ */
 public class Happiness {
 
 	double currentHappiness;

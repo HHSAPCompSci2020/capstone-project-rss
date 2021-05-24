@@ -5,18 +5,20 @@ Authors: Jeremie Park, Megan Choy
 Revision: 5/14/21
 
 Introduction: 
-Responsible Student Simulator (RSS) is an idle simulator game for people who enjoy seeing numbers grow. Users control a student in high school and try to survive through various events, including passing hard courses, attending school events, and managing stress and sleep. The currency used in this game are brain cells that are gained by the second and the rate can be increased by upgrading the student’s supplies and attending harder courses. However, there are ways that brain cell production can decrease, such as negative emotions and not getting enough sleep. The ultimate goal is to finish 4 years of highschool!
-
-        Supplies such as, technological devices, writing utensils, paper, textbooks, and desk upgrades will add to braincell rate or increase happiness. These upgrades will help the player progress as it increases passive brain cell production rate,  effectiveness of courses, emotional state gain and loss, and cost of purchases.
-Courses can be bought with brain cells and every time the student attends a course, braincells will be earned, but stress will increase and sleep will decrease. Courses can be upgraded to improve the amount of brain cells gained and time required for completion. More advanced courses will produce more brain cells, but will be slower and affect sleep and stress more. The difficulty of the courses are shown by the number of stars on the course description, 1 being easy and 5 being very difficult.
-The menu shows the student in the top left corner with the stress and sleep bars below it. The passive brain cell production rate and total brain cells is shown at the top right. Below the student’s picture is a menu where the player can switch between upgrades, courses, and prestige pages. On each of the pages, there is a picture and description of all the upgrades and courses.
+	Responsible Student Simulator (RSS) is an idle simulator game for people who enjoy seeing numbers grow. Users control a student in high school and try to survive through various events, including passing hard courses, attending school events, and managing stress, sleep, and happiness. The currency used in this game are brain cells that are gained by the second and the rate can be increased by upgrading the student’s supplies and attending harder courses. However, there are ways that brain cell production can decrease, such as negative emotions and not getting enough sleep. The ultimate goal is to finish 4 years of high school!
+	Supplies such as, technological devices, writing utensils, paper, textbooks, and desk upgrades will add to braincell rate. These upgrades will help the player progress as it increases passive brain cell production rate, effectiveness of courses, emotional state gain and loss, and cost of purchases.
+	Courses can be bought with brain cells and every time the student attends a course, braincells will be earned, but stress will increase and sleep will decrease. Courses can be upgraded to improve the amount of brain cells gained and time required for completion. More advanced courses will produce more brain cells, but will be slower and affect sleep and stress more. 
+	The menu shows the student in the top left corner with the stress and sleep bars below it. The passive brain cell production rate and total brain cells is shown at the top right. Below the student’s picture is a menu where the player can switch between upgrades, courses, and prestige pages. On each of the pages, there is a picture and description of all the upgrades and courses.
+	
 
 
 
 
 Instructions:
-   When the game is first opened, users will be prompted to input a student name. That name will be used for the current save file and carried on throughout the game. After, the user will see the main panel with the brain cell count, the student’s stats, and various upgrades. The user can click on the upgrade buttons to increase the production of brain cells and also click between “upgrades”, “courses”, and “prestige”.
-The student’s sleep and stress levels will change while the game is running. To increase sleep, the user will click on the bed and have to wait 20 seconds while the student is sleeping. During that time, no upgrades can be bought and no courses can be taken. There will be extra activities that will cost brain cells but will decrease stress.
+	When the game is first opened, the user will see the main panel with the brain cell count, the student’s stats, and various courses. The first step is for the user to unlock and start the first course. It gives active income and the users can use the brain cells earned to buy upgrades. The upgrade buttons increase the production of brain cells and there are tabs to navigate between “upgrades”, “courses”, and “other”.
+	The student’s sleep, stress, and happiness levels will change while the game is running. If levels are too low, then it will affect brain cell production negatively. To increase sleep, the user can go to the “other” panel and go to sleep. There are also extra activities that will cost brain cells but will decrease stress and increase happiness. 
+	When the user earns enough brain cells, prestige can be bought and it will reset all current progress, but make a permanent production multiplier!
+
 
         
 
@@ -52,11 +54,12 @@ Class List:
 * BrainCell: handles the math of total brain cells including the rate of the brain cell 
 * Course: super class of all the courses that the student can take
 * CoursePanel: contains all buttons and classes related to courses, used to start production for courses and displaying buttons
+* Happiness: Class that holds the happiness value, can be decreased or increased
 * Main: Main: Contains main method
 * Menu: The window that gets refreshed to show the totals from BrainCell
 * OtherPanel: panel that contains the prestige buttons
+* Prestige: The class that represents the number of times the user has prestiged
 * Sleep: class that holds the percentage of sleep, can be decreased or increased
-* StartMenu: menu that is prompted from the start
 * Stress: class that holds the stress value, can be decreased or increased
 * Upgrade: abstract class representing an upgrade; this includes both upgrades bought with brain cells and prestige currency
 * UpgradePanel: contains all buttons and classes related to the upgrades; used to buy upgrades, process upgrade production rate, and displaying buttons to the panel.
@@ -65,7 +68,7 @@ Class List:
 
 
 Credits:
-* Jeremie: Coded BrainCell, Upgrade, UpgradePanel, Other panel, and the sleep and stress classes. 
-	Also created the math to calculate braincell fields across classes, and the layout for the panels.
-* Megan:  Main, Menu, Course, CourseButton, StartMenu
-* TBD: Prestige, Sleep, Stress
+* Jeremie Park: Class worked on: BrainCell, Upgrade, UpgradePanel, Other panel, Prestige, Happiness, Sleep, and Stress. Also created the math to calculate braincell fields across classes, the layout for the panels, and brought up the general idea of the code.
+* Megan Choy: Class worked on: Course, CoursePanel, Main, Menu, Window. Also created most of the GUI, thought of most of the upgrade ideas, made the upgrades and courses more efficient, provided the majority of the pictures, and did most of the updating for the ReadME and UML diagram. 
+* Thonk images: angrythonk - Alex Um, bonk thonk - Megan Choy, and thonk - memes
+* Upgrade images: drawn by Megan Choy and Jeremie Park

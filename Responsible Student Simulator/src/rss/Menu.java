@@ -67,7 +67,7 @@ public class Menu extends JPanel implements ActionListener {
 		Graphics2D g2 = (Graphics2D)g;
 		studentImages(g2, xRatio, yRatio);
 		deskImages(g2, xRatio, yRatio);
-
+		
 	  }
 	
 	public void repaint() {
@@ -211,12 +211,10 @@ public class Menu extends JPanel implements ActionListener {
 		g.setColor(Color.RED);
 		if (sleep < 30) {
 			g.drawString("Brain cell rate is decreased because of low sleep!", 350, 60);
-		} 
-		if(stress > 70) {
-			g.drawString("Brain cell rate is decreased because of high stress!", 350, 80);
-		}
-		if (happiness < 30) {
-			g.drawString("Brain cell rate is decreased because of unhappiness!", 350, 100);
+		} else if(stress > 70) {
+			g.drawString("Brain cell rate is decreased because of high stress!", 350, 60);
+		} else if (happiness < 30) {
+			g.drawString("Brain cell rate is decreased because of unhappiness!", 350, 60);
 		}
 		
 	}
