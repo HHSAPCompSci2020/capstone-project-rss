@@ -64,6 +64,7 @@ public class Upgrade {
 	public void setOwned(int owned) {
 		this.owned = owned;
 		currentProduction = owned * baseProduction;
+		currentCost = baseCost * Math.pow(1.15, owned);
 	}
 	
 	/**

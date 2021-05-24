@@ -27,10 +27,6 @@ public class Window extends JFrame {
 		setBounds(500, 50, 800, 1000);
 	    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    
-//	    cardPanel = new JPanel();
-//	    CardLayout cl = new CardLayout();
-//	    cardPanel.setLayout(cl);
-	    
 	    brainCell = new BrainCell();
 	    upgradePanel = new UpgradePanel(brainCell);
 	    coursePanel = new CoursePanel(brainCell);
@@ -38,19 +34,13 @@ public class Window extends JFrame {
 	    menu = new Menu(this, brainCell, coursePanel, upgradePanel);
 	    	
 	    tabbedPane = new JTabbedPane();
-//	    tabbedPane.setTabPlacement(JTabbedPane.LEFT);
 	    tabbedPane.add("Courses", coursePanel);
 	    tabbedPane.add("Upgrades", upgradePanel);
 	    tabbedPane.add("Other", otherPanel);
-
-	    
+    
 	    splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, menu, tabbedPane);
 	    splitPane.setDividerLocation(355);
 
-//	    cardPanel.add(startMenu,"1");
-//	    cardPanel.add(splitPane,"2");
-	    
-//	    add(cardPanel);
 	    add(splitPane);
 	    setVisible(true);
 	    
@@ -74,10 +64,8 @@ public class Window extends JFrame {
 			    		}
 			    		
 				    	if (coursePanel.getCourses().get(i).getProgress() == 1) {
-				    		System.out.println("end");
 				    		brainCell.addStress((i+1) * 10);
 				    		brainCell.addHappiness(-(i+1) * 5);
-				    		System.out.println(brainCell.getStress());
 				    		coursePanel.getCourses().get(i).endProduction();
 			    			brainCell.addTotal(coursePanel.getCourses().get(i).getProduction() * Math.pow(2,brainCell.prestige.getOwned()));
 				    	}
@@ -97,7 +85,6 @@ public class Window extends JFrame {
 		timer.start();
 	    
 	}
-	
 	
 	/**
 	 * Updates the total brain cell count with the passive income; call every second
