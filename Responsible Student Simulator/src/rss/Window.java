@@ -16,7 +16,6 @@ import java.awt.event.ActionListener;
  */
 public class Window extends JFrame {
 	
-	private JPanel cardPanel;
 	private JSplitPane splitPane;
 	private JTabbedPane tabbedPane;
 	
@@ -39,7 +38,7 @@ public class Window extends JFrame {
 	    upgradePanel = new UpgradePanel(brainCell);
 	    coursePanel = new CoursePanel(brainCell);
 	    otherPanel = new OtherPanel(brainCell);
-	    menu = new Menu(this, brainCell, coursePanel, upgradePanel);
+	    menu = new Menu(brainCell, coursePanel, upgradePanel);
 	    	
 	    tabbedPane = new JTabbedPane();
 	    tabbedPane.add("Courses", coursePanel);

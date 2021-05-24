@@ -22,25 +22,20 @@ public class CoursePanel extends JPanel implements ActionListener {
 	private ArrayList<JButton> buttons = new ArrayList<JButton>();
 	private JButton mathButton, scienceButton, englishButton, historyButton;
 	private BrainCell brainCell;
-	private Course math, science, english, history;
 
 	public CoursePanel(BrainCell brainCell) {
 		setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		this.brainCell = brainCell;
 
-		math = new Course("Algebra", "maffs?", 100, 0, 5);
-		science = new Course("Biology", "cells studying themselves", 10000, 1000, 7);
-		english = new Course("American Literature", "genocide", 50000, 5000, 10);
-		history = new Course("World History", "zzzzz", 100000, 20000, 18);
-		courses.add(math);
-		courses.add(science);
-		courses.add(english);
-		courses.add(history);
+		courses.add(new Course("Algebra", "maffs?", 100, 0, 5));
+		courses.add(new Course("Biology", "cells studying themselves", 10000, 1000, 7));
+		courses.add(new Course("American Literature", "genocide", 50000, 5000, 10));
+		courses.add(new Course("World History", "zzzzz", 100000, 20000, 18));
 
-		mathButton = new JButton(math.toString());
-		scienceButton = new JButton(science.toString());
-		englishButton = new JButton(english.toString());
-		historyButton = new JButton(history.toString());
+		mathButton = new JButton(courses.get(0).toString());
+		scienceButton = new JButton(courses.get(1).toString());
+		englishButton = new JButton(courses.get(2).toString());
+		historyButton = new JButton(courses.get(3).toString());
 
 		buttons.add(mathButton);
 		buttons.add(scienceButton);

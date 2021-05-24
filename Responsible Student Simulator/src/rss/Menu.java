@@ -20,7 +20,6 @@ import javax.swing.JPanel;
  */
 public class Menu extends JPanel implements ActionListener {
 
-	Window window;
 	BrainCell brain;
 	double rate, total, stress, sleep, happiness;
 	Graphics g;
@@ -37,8 +36,7 @@ public class Menu extends JPanel implements ActionListener {
 	 * @param coursePanel  The CoursePanel class used
 	 * @param upgradePanel The UpgradePanel class used
 	 */
-	public Menu(Window window, BrainCell brain, CoursePanel coursePanel, UpgradePanel upgradePanel) {
-		this.window = window;
+	public Menu(BrainCell brain, CoursePanel coursePanel, UpgradePanel upgradePanel) {
 		this.brain = brain;
 		this.coursePanel = coursePanel;
 		this.upgradePanel = upgradePanel;
