@@ -15,7 +15,6 @@ public class Window extends JFrame {
 	private JSplitPane splitPane;
 	private JTabbedPane tabbedPane;
 	
-	private StartMenu startMenu;    
 	private Menu menu;
 	private UpgradePanel upgradePanel;
 	private CoursePanel coursePanel;
@@ -33,7 +32,6 @@ public class Window extends JFrame {
 //	    cardPanel.setLayout(cl);
 	    
 	    brainCell = new BrainCell();
-	    startMenu = new StartMenu(this);    
 	    upgradePanel = new UpgradePanel(brainCell);
 	    coursePanel = new CoursePanel(brainCell);
 	    otherPanel = new OtherPanel(brainCell);
@@ -100,10 +98,6 @@ public class Window extends JFrame {
 	    
 	}
 	
-	public void goToMenu() {
-		((CardLayout)cardPanel.getLayout()).next(cardPanel);
-//		menu.requestFocus();
-	}
 	
 	/**
 	 * Updates the total brain cell count with the passive income; call every second
