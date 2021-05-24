@@ -167,10 +167,43 @@ public class Menu extends JPanel implements ActionListener {
 		int phone = 5; //Number of phone upgrades
 		for (int i = phone -1; i >= 0; i--) {
 			if (upgrades.get(i).getOwned() > 0) {
-				g2.drawImage(images.get(i), 450, 355, (int)(75 * xRatio), (int)(150 * yRatio), this);
+				g2.drawImage(images.get(i), 430, 355, (int)(75 * xRatio), (int)(150 * yRatio), this);
 				i = -1;
 			}
 		}
+		
+//		ArrayList<Image> computerImages = new ArrayList<Image>();
+//		computerImages.add(new ImageIcon("laptop.png").getImage());
+//		computerImages.add(new ImageIcon("pc.png").getImage());
+//		
+//		int computer = 2;
+//		for (int i = computer -1; i >= 0; i--) {
+//			if (upgrades.get(i).getOwned() > 0) {
+//				g2.drawImage(computerImages.get(i), 450, 355, (int)(75 * xRatio), (int)(150 * yRatio), this);
+//				i = -1;
+//			}
+//		}
+		if (upgrades.get(8).getOwned() > 0) {
+			g2.drawImage(new ImageIcon("desktopupgrades.png").getImage(), 620, 315, (int)(112.5 * xRatio), (int)(225 * yRatio), this);
+		} else if (upgrades.get(6).getOwned() > 0) {
+			g2.drawImage(new ImageIcon("pc.png").getImage(), 620, 315, (int)(112.5 * xRatio), (int)(225 * yRatio), this);
+		} else if (upgrades.get(5).getOwned() > 0) {
+			g2.drawImage(new ImageIcon("laptop.png").getImage(), 620, 330, (int)(75 * xRatio), (int)(150 * yRatio), this);
+		}
+		
+		if (upgrades.get(11).getOwned() > 0) {
+			g2.drawImage(new ImageIcon("hologram.png").getImage(), 470, 190, (int)(187.5 * xRatio), (int)(375 * yRatio), this);
+		} else if (upgrades.get(7).getOwned() > 0) {
+			g2.drawImage(new ImageIcon("ultrawide.png").getImage(), 470, 225, (int)(187.5 * xRatio), (int)(375 * yRatio), this);
+		}
+		
+		if (upgrades.get(9).getOwned() > 0) {
+			g2.drawImage(new ImageIcon("mouse.png").getImage(), 590, 365, (int)(75 * xRatio), (int)(150 * yRatio), this);
+		} 
+		if (upgrades.get(10).getOwned() > 0) {
+			g2.drawImage(new ImageIcon("keyboard.png").getImage(), 520, 375, (int)(75 * xRatio), (int)(150 * yRatio), this);
+		}
+
 				
 	}
 	
